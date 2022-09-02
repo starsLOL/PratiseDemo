@@ -1,13 +1,9 @@
 package com.stars.pratise.demo.test;
 
-import com.stars.pratise.demo.entity.User;
+import com.stars.pratise.demo.log.enums.BusinessType;
 
 import java.lang.reflect.InvocationTargetException;
-import java.lang.reflect.Method;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 public class demoUser {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
@@ -35,7 +31,8 @@ public class demoUser {
         System.out.println(new SimpleDateFormat("yy-MM-dd  HH-mm-ss").format(System.currentTimeMillis()));
 
         //
-
+        System.out.println(BusinessType.DELETE.ordinal());
+        System.out.println(BusinessType.values()[3]);
 //        User user = new User((long) 1,"demo","2022-08-31 00:29:17");
 //        ArrayList<User> errorUsers = new ArrayList<User>();
 //        errorUsers.add(user);

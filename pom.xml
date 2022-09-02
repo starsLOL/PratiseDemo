@@ -37,7 +37,7 @@
             <version>${guava.version}</version>
         </dependency>
 
-        <!--        Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。-->
+        <!--Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。-->
         <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
         <dependency>
             <groupId>cn.hutool</groupId>
@@ -54,7 +54,7 @@
         </dependency>
 
 
-        <!--  SpringBoot AOP切面使用      -->
+        <!--  SpringBoot AOP切面依赖      -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-aop</artifactId>

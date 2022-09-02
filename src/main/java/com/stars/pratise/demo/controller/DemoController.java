@@ -2,6 +2,7 @@ package com.stars.pratise.demo.controller;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
+import com.stars.pratise.demo.log.annotation.OperLog;
 import com.stars.pratise.demo.config.ConfigDemoBean;
 import com.stars.pratise.demo.config.ConfigTestBean;
 import com.stars.pratise.demo.domain.BlogProperties;
@@ -23,8 +24,8 @@ public class DemoController {
     private ConfigDemoBean configDemoBean;
 
     @GetMapping("/wrong")
-    public int error(){
-        int i = 9/0;
+    public int error() {
+        int i = 9 / 0;
         return i;
     }
 
@@ -35,28 +36,30 @@ public class DemoController {
      * @param who 测试参数
      * @return {@link Dict}
      */
+    @OperLog(operateModul = "demo manage", operateType = "test", operatesDesc = "this is a test controller")
     @GetMapping("/test")
     public Dict test(String who) {
         return Dict.create().set("who", StrUtil.isBlank(who) ? "stars" : who);
     }
 
+
     @RequestMapping("/checkMessages")
-    public String checkMessages(){
-        return configDemoBean.getName() + " -configDemoBean- " +configDemoBean.getAge();
+    public String checkMessages() {
+        return configDemoBean.getName() + " -configDemoBean- " + configDemoBean.getAge();
     }
 
     @RequestMapping("/findMessages")
-    public String findMessages(){
-        return configTestBean.getName() + " -configTestBean- " +configTestBean.getTitle();
+    public String findMessages() {
+        return configTestBean.getName() + " -configTestBean- " + configTestBean.getTitle();
     }
 
     @RequestMapping("/selectMessages")
-    public String selectMessages(){
-        return blogProperties.getName() + " -blogProperties- " +blogProperties.getTitle();
+    public String selectMessages() {
+        return blogProperties.getName() + " -blogProperties- " + blogProperties.getTitle();
     }
 
     @RequestMapping("/hello")
-    public String hello(String name){
+    public String hello(String name) {
         return "hello dogs is you " + name;
     }
 }
