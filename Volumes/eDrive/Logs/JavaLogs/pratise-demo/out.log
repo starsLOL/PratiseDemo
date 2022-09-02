@@ -1,0 +1,124 @@
+- | [] | [2022-08-30 00:14:44.883] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Starting PratiseDemoApplication using Java 1.8.0_221 on macs-MacBook-Pro.local with PID 60746 (/Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo/target/classes started by mac in /Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo)|
+- | [] | [2022-08-30 00:14:44.883] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Running with Spring Boot v2.7.3, Spring v5.3.22|
+- | [] | [2022-08-30 00:14:44.883] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> No active profile set, falling back to 1 default profile: "default"|
+- | [] | [2022-08-30 00:14:45.107] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Initializing ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:14:45.108] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardService] | --> Starting service [Tomcat]|
+- | [] | [2022-08-30 00:14:45.108] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardEngine] | --> Starting Servlet engine: [Apache Tomcat/9.0.65]|
+- | [] | [2022-08-30 00:14:45.125] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring embedded WebApplicationContext|
+- | [] | [2022-08-30 00:14:45.192] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.DemoController:
+	{ [/hello]}: hello(String)
+	{ [/checkMessages]}: checkMessages()
+	{ [/findMessages]}: findMessages()
+	{ [/selectMessages]}: selectMessages()|
+- | [] | [2022-08-30 00:14:45.193] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.LogTestController:
+	{GET [/testlog]}: test()|
+- | [] | [2022-08-30 00:14:45.196] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)|
+- | [] | [2022-08-30 00:14:45.200] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'beanNameHandlerMapping' {}|
+- | [] | [2022-08-30 00:14:45.204] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}|
+- | [] | [2022-08-30 00:14:45.237] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Starting ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:14:45.245] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Started PratiseDemoApplication in 0.417 seconds (JVM running for 109.106)|
+- | [] | [2022-08-30 00:14:56.912] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Starting PratiseDemoApplication using Java 1.8.0_221 on macs-MacBook-Pro.local with PID 60929 (/Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo/target/classes started by mac in /Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo)|
+- | [] | [2022-08-30 00:14:56.914] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Running with Spring Boot v2.7.3, Spring v5.3.22|
+- | [] | [2022-08-30 00:14:56.915] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> No active profile set, falling back to 1 default profile: "default"|
+- | [] | [2022-08-30 00:14:58.194] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Initializing ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:14:58.195] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardService] | --> Starting service [Tomcat]|
+- | [] | [2022-08-30 00:14:58.195] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardEngine] | --> Starting Servlet engine: [Apache Tomcat/9.0.65]|
+- | [] | [2022-08-30 00:14:58.261] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring embedded WebApplicationContext|
+- | [] | [2022-08-30 00:14:58.551] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.DemoController:
+	{ [/hello]}: hello(String)
+	{ [/checkMessages]}: checkMessages()
+	{ [/findMessages]}: findMessages()
+	{ [/selectMessages]}: selectMessages()|
+- | [] | [2022-08-30 00:14:58.554] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.LogTestController:
+	{GET [/testlog]}: test()|
+- | [] | [2022-08-30 00:14:58.557] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)|
+- | [] | [2022-08-30 00:14:58.565] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'beanNameHandlerMapping' {}|
+- | [] | [2022-08-30 00:14:58.578] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}|
+- | [] | [2022-08-30 00:14:58.658] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Starting ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:14:58.703] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Started PratiseDemoApplication in 2.494 seconds (JVM running for 3.393)|
+- | [] | [2022-08-30 00:15:18.012] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Starting PratiseDemoApplication using Java 1.8.0_221 on macs-MacBook-Pro.local with PID 60962 (/Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo/target/classes started by mac in /Volumes/eDrive/Projects/Java/SpringBoot/pratise-demo)|
+- | [] | [2022-08-30 00:15:18.014] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Running with Spring Boot v2.7.3, Spring v5.3.22|
+- | [] | [2022-08-30 00:15:18.015] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> No active profile set, falling back to 1 default profile: "default"|
+- | [] | [2022-08-30 00:15:19.524] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Initializing ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:15:19.524] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardService] | --> Starting service [Tomcat]|
+- | [] | [2022-08-30 00:15:19.525] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.catalina.core.StandardEngine] | --> Starting Servlet engine: [Apache Tomcat/9.0.65]|
+- | [] | [2022-08-30 00:15:19.593] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.c.c.C.[Tomcat].[localhost].[/]] | --> Initializing Spring embedded WebApplicationContext|
+- | [] | [2022-08-30 00:15:20.052] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.DemoController:
+	{ [/hello]}: hello(String)
+	{ [/checkMessages]}: checkMessages()
+	{ [/findMessages]}: findMessages()
+	{ [/selectMessages]}: selectMessages()|
+- | [] | [2022-08-30 00:15:20.056] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	c.s.p.d.c.LogTestController:
+	{GET [/testlog]}: test()|
+- | [] | [2022-08-30 00:15:20.059] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 
+	o.s.b.a.w.s.e.BasicErrorController:
+	{ [/error]}: error(HttpServletRequest)
+	{ [/error], produces [text/html]}: errorHtml(HttpServletRequest,HttpServletResponse)|
+- | [] | [2022-08-30 00:15:20.068] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'beanNameHandlerMapping' {}|
+- | [] | [2022-08-30 00:15:20.086] | [DEBUG] | [macs-MacBook-Pro.local] | [restartedMain] | [_.s.w.s.HandlerMapping.Mappings] | --> 'resourceHandlerMapping' {/webjars/**=ResourceHttpRequestHandler [classpath [META-INF/resources/webjars/]], /**=ResourceHttpRequestHandler [classpath [META-INF/resources/], classpath [resources/], classpath [static/], classpath [public/], ServletContext [/]]}|
+- | [] | [2022-08-30 00:15:20.179] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [o.a.coyote.http11.Http11NioProtocol] | --> Starting ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:15:20.226] | [INFO ] | [macs-MacBook-Pro.local] | [restartedMain] | [c.s.p.demo.PratiseDemoApplication] | --> Started PratiseDemoApplication in 2.825 seconds (JVM running for 3.729)|
+- | [] | [2022-08-30 00:15:54.834] | [INFO ] | [macs-MacBook-Pro.local] | [Thread-11] | [o.a.coyote.http11.Http11NioProtocol] | --> Pausing ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:15:54.835] | [WARN ] | [macs-MacBook-Pro.local] | [Thread-11] | [o.apache.tomcat.util.net.NioEndpoint] | --> Failed to unlock acceptor for [http-nio-8899] because the local address was not available|
+- | [] | [2022-08-30 00:15:54.836] | [INFO ] | [macs-MacBook-Pro.local] | [Thread-11] | [o.a.catalina.core.StandardService] | --> Stopping service [Tomcat]|
+- | [] | [2022-08-30 00:15:54.836] | [ERROR] | [macs-MacBook-Pro.local] | [http-nio-8899-Acceptor] | [org.apache.tomcat.util.net.Acceptor] | --> Socket accept failed|
+java.nio.channels.AsynchronousCloseException: null
+	at java.nio.channels.spi.AbstractInterruptibleChannel.end(AbstractInterruptibleChannel.java:205)
+	at sun.nio.ch.ServerSocketChannelImpl.accept(ServerSocketChannelImpl.java:257)
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:547)
+	at org.apache.tomcat.util.net.NioEndpoint.serverSocketAccept(NioEndpoint.java:79)
+	at org.apache.tomcat.util.net.Acceptor.run(Acceptor.java:129)
+	at java.lang.Thread.run(Thread.java:748)
+- | [] | [2022-08-30 00:15:54.842] | [INFO ] | [macs-MacBook-Pro.local] | [Thread-11] | [o.a.coyote.http11.Http11NioProtocol] | --> Stopping ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:15:54.848] | [INFO ] | [macs-MacBook-Pro.local] | [Thread-11] | [o.a.coyote.http11.Http11NioProtocol] | --> Destroying ProtocolHandler ["http-nio-8899"]|
+- | [] | [2022-08-30 00:26:28.335] | [ERROR] | [macs-MacBook-Pro.local] | [restartedMain] | [o.s.boot.SpringApplication] | --> Application run failed|
+java.lang.IllegalStateException: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - 'File' option has the same value "Volumes/eDrive/Logs/JavaLogs/pratise-demo/out.log" as that given for appender [FILE_ALL] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:344)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initialize(LoggingApplicationListener.java:298)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEnvironmentPreparedEvent(LoggingApplicationListener.java:246)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.onApplicationEvent(LoggingApplicationListener.java:223)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.doInvokeListener(SimpleApplicationEventMulticaster.java:176)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.invokeListener(SimpleApplicationEventMulticaster.java:169)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:143)
+	at org.springframework.context.event.SimpleApplicationEventMulticaster.multicastEvent(SimpleApplicationEventMulticaster.java:131)
+	at org.springframework.boot.context.event.EventPublishingRunListener.environmentPrepared(EventPublishingRunListener.java:85)
+	at org.springframework.boot.SpringApplicationRunListeners.lambda$environmentPrepared$2(SpringApplicationRunListeners.java:66)
+	at java.util.ArrayList.forEach(ArrayList.java:1257)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:120)
+	at org.springframework.boot.SpringApplicationRunListeners.doWithListeners(SpringApplicationRunListeners.java:114)
+	at org.springframework.boot.SpringApplicationRunListeners.environmentPrepared(SpringApplicationRunListeners.java:65)
+	at org.springframework.boot.SpringApplication.prepareEnvironment(SpringApplication.java:344)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:302)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1306)
+	at org.springframework.boot.SpringApplication.run(SpringApplication.java:1295)
+	at com.stars.pratise.demo.PratiseDemoApplication.main(PratiseDemoApplication.java:14)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.springframework.boot.devtools.restart.RestartLauncher.run(RestartLauncher.java:49)
+Caused by: java.lang.IllegalStateException: Logback configuration error detected: 
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - 'File' option has the same value "Volumes/eDrive/Logs/JavaLogs/pratise-demo/out.log" as that given for appender [FILE_ALL] defined earlier.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - Collisions detected with FileAppender/RollingAppender instances defined earlier. Aborting.
+ERROR in ch.qos.logback.core.rolling.RollingFileAppender[FILE_ERROR] - For more information, please visit http://logback.qos.ch/codes.html#earlier_fa_collision
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.loadConfiguration(LogbackLoggingSystem.java:179)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initializeWithSpecificConfig(AbstractLoggingSystem.java:66)
+	at org.springframework.boot.logging.AbstractLoggingSystem.initialize(AbstractLoggingSystem.java:57)
+	at org.springframework.boot.logging.logback.LogbackLoggingSystem.initialize(LogbackLoggingSystem.java:132)
+	at org.springframework.boot.context.logging.LoggingApplicationListener.initializeSystem(LoggingApplicationListener.java:332)
+	... 23 common frames omitted

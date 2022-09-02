@@ -1,0 +1,22 @@
+package com.stars.pratise.demo.controller;
+
+import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.service.UserService;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+
+import javax.annotation.Resource;
+
+@RestController
+@RequestMapping("api/v1/users")
+public class UserController {
+
+    @Resource
+    private UserService userService;
+
+    @GetMapping()
+    public <T> ResponseData getAllUser() {
+        return this.userService.findAllUser();
+    }
+}

@@ -1,0 +1,24 @@
+ ${application.title} ${application.version}
+
+ # springboot的版本号
+ Powered by Spring Boot ${spring-boot.version}
+
+ # springboot的版本号前面加v后上括号
+ ${spring-boot.formatted-version}
+
+ # MANIFEST.MF文件中的版本号
+ ${application.version}
+
+ # MANIFEST.MF文件的版本号前面加v后上括号
+ ${application.formatted-version}
+
+ # MANIFEST.MF文件中的程序名称
+ ${application.title}
+
+ # ANSI样色/样式等
+ ${Ansi.NAME} (or ${AnsiColor.NAME}, ${AnsiBackground.NAME}, ${AnsiStyle.NAME})
+                           ,--.   ,--.                            ,--.                            
+ ,---.  ,--.--.  ,--,--. ,-'  '-. `--'  ,---.   ,---.  ,-----.  ,-|  |  ,---.  ,--,--,--.  ,---.  
+| .-. | |  .--' ' ,-.  | '-.  .-' ,--. (  .-'  | .-. : '-----' ' .-. | | .-. : |        | | .-. | 
+| '-' ' |  |    \ '-'  |   |  |   |  | .-'  `) \   --.         \ `-' | \   --. |  |  |  | ' '-' ' 
+|  |-'  `--'     `--`--'   `--'   `--' `----'   `----'          `---'   `----' `--`--`--'  `---'  
