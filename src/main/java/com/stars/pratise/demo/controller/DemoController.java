@@ -1,5 +1,7 @@
 package com.stars.pratise.demo.controller;
 
+import cn.hutool.core.lang.Dict;
+import cn.hutool.core.util.StrUtil;
 import com.stars.pratise.demo.config.ConfigDemoBean;
 import com.stars.pratise.demo.config.ConfigTestBean;
 import com.stars.pratise.demo.domain.BlogProperties;
@@ -26,6 +28,17 @@ public class DemoController {
         return i;
     }
 
+
+    /**
+     * 测试方法
+     *
+     * @param who 测试参数
+     * @return {@link Dict}
+     */
+    @GetMapping("/test")
+    public Dict test(String who) {
+        return Dict.create().set("who", StrUtil.isBlank(who) ? "stars" : who);
+    }
 
     @RequestMapping("/checkMessages")
     public String checkMessages(){

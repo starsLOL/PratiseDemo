@@ -22,11 +22,43 @@
         <druid.version>1.2.11</druid.version>
         <mybatis.version>3.5.6</mybatis.version>
         <pagehelper.version>1.4.3</pagehelper.version>
+        <UserAgentUtils.version>1.21</UserAgentUtils.version>
+        <hutool.version>5.8.5</hutool.version>
+        <guava.version>31.1-jre</guava.version>
     </properties>
 
 
     <dependencies>
 
+        <!-- https://mvnrepository.com/artifact/com.google.guava/guava -->
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>${guava.version}</version>
+        </dependency>
+
+        <!--        Hutool是一个小而全的Java工具类库，通过静态方法封装，降低相关API的学习成本，提高工作效率，使Java拥有函数式语言般的优雅，让Java语言也可以“甜甜的”。-->
+        <!-- https://mvnrepository.com/artifact/cn.hutool/hutool-all -->
+        <dependency>
+            <groupId>cn.hutool</groupId>
+            <artifactId>hutool-all</artifactId>
+            <version>${hutool.version}</version>
+        </dependency>
+
+        <!-- 解析 UserAgent 信息 -->
+        <!-- https://mvnrepository.com/artifact/eu.bitwalker/UserAgentUtils -->
+        <dependency>
+            <groupId>eu.bitwalker</groupId>
+            <artifactId>UserAgentUtils</artifactId>
+            <version>${UserAgentUtils.version}</version>
+        </dependency>
+
+
+        <!--  SpringBoot AOP切面使用      -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
 
         <!--  SpringBoot中集成参数校验      -->
         <dependency>
