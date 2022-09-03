@@ -6,12 +6,16 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
 public class LogErrorInfo implements Serializable {
+
+    // 主键id
+    private long id;
     // 线程id
     private String threadId;
     // 线程名称
@@ -24,6 +28,10 @@ public class LogErrorInfo implements Serializable {
     private String httpMethod;
     //http 请求响应状态码
     private Integer httpStatus;
+    // 操作用户id
+    private String userId;
+    // 操作用户名称
+    private String userName;
     // 异常名称
     private String exceptionName;
     // 异常信息
@@ -40,5 +48,9 @@ public class LogErrorInfo implements Serializable {
     private String browser;
     // user-agent
     private String userAgent;
+    // 版本号
+    private String version;
+    // 创建时间
+    private LocalDateTime createTime;
 
 }

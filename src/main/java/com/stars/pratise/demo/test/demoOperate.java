@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.test;
 
-import com.stars.pratise.demo.enums.Constants;
+import com.stars.pratise.demo.enums.DemoEums;
 
 import java.lang.reflect.InvocationTargetException;
 
@@ -34,8 +34,10 @@ public class demoOperate {
 //        System.out.println(BusinessType.values()[3]);
 //        System.out.println(LocalDateTime.now());
 
-        System.out.println(Constants.DELETE.getOperateType());
-        System.out.println(Constants.DELETE.getDescribe());
+//        System.out.println(Constants.DELETE.getOperateType());
+//        System.out.println(Constants.DELETE.getDescribe());
+
+        System.out.println(DemoEums.TEST.getDesc());
 
 //        User user = new User((long) 1,"demo","2022-08-31 00:29:17");
 //        ArrayList<User> errorUsers = new ArrayList<User>();

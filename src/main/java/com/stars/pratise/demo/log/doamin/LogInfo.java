@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
+import java.time.LocalDateTime;
 
 @Data
 @Builder
@@ -14,7 +15,9 @@ import java.io.Serializable;
 public class LogInfo implements Serializable {
     // 主键id
 //    @TableId(type = IdType.ASSIGN_UUID)
-    private String id;
+    //    private String id;
+    // 主键id
+    private long id;
     // 线程id
     private String threadId;
     // 线程名称
@@ -41,10 +44,18 @@ public class LogInfo implements Serializable {
     private Object result;
     // 接口耗时
     private Long timeCost;
+    // 操作用户id
+    private String userId;
+    // 操作用户名称
+    private String userName;
     // 操作系统
     private String os;
     // 浏览器
     private String browser;
     // user-agent
     private String userAgent;
+    // 版本号
+    private String version;
+    // 创建时间
+    private LocalDateTime createTime;
 }
