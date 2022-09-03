@@ -3,20 +3,19 @@ package com.stars.pratise.demo.log.aspect;
 
 import cn.hutool.core.util.ArrayUtil;
 import cn.hutool.json.JSONUtil;
+import com.alibaba.fastjson.JSON;
 import com.google.common.collect.Maps;
 import com.stars.pratise.demo.log.annotation.OperLog;
-import com.stars.pratise.demo.log.doamin.ExceptionLog;
-import com.stars.pratise.demo.log.doamin.LogVO;
+import com.stars.pratise.demo.log.doamin.LogErrorInfo;
+import com.stars.pratise.demo.log.doamin.LogInfo;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.Signature;
-import org.aspectj.lang.annotation.AfterThrowing;
-import org.aspectj.lang.annotation.Around;
-import org.aspectj.lang.annotation.Aspect;
-import org.aspectj.lang.annotation.Pointcut;
+import org.aspectj.lang.annotation.*;
 import org.aspectj.lang.reflect.MethodSignature;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
@@ -46,11 +45,29 @@ public class AopLog {
 
 
     /**
+     * 操作版本号
+     * 项目启动时从命令行传入，例如：java -jar xxx.war --version=201902
+     */
+    @Value("${version}")
+    private String version;
+
+    /**
+     * 统计请求的处理时间
+     */
+    ThreadLocal<Long> startTime = new ThreadLocal<>();
+
+    /**
      * 设置操作日志切入点 记录操作日志 在注解的位置切入代码å
      */
     @Pointcut("@annotation(com.stars.pratise.demo.log.annotation.OperLog)")
 
     public void operateLogPoinCut() {
+    }
+
+    @Before("operateLogPoinCut()")
+    public void doBefore() {
+        // 接收到请求，记录请求开始时间
+        startTime.set(System.currentTimeMillis());
     }
 
     /**
@@ -88,7 +105,7 @@ public class AopLog {
         // 打印请求相关参数
 
         // 记录执行时间
-        long startTime = System.currentTimeMillis();
+//        long startTime = System.currentTimeMillis();
         //处理请求
         Object result = point.proceed();
         String header = request.getHeader("User-Agent");
@@ -107,7 +124,7 @@ public class AopLog {
 
             assert opLog != null;
 
-            final LogVO l = LogVO.builder()
+            final LogInfo l = LogInfo.builder()
                     .threadId(Long.toString(Thread.currentThread().getId()))
                     .threadName(Thread.currentThread().getName())
                     .ip(getIp(request))
@@ -119,9 +136,9 @@ public class AopLog {
                     .operateModul(opLog.operateModul())
                     .operateType(opLog.operateType())
                     .operateDesc(opLog.operatesDesc())
-                    .requestParams(getNameAndValue(point))
-                    .result(result)
-                    .timeCost(System.currentTimeMillis() - startTime)
+                    .requestParams(JSON.toJSONString(getNameAndValue(point)))
+                    .result(JSON.toJSONString(result))
+                    .timeCost(System.currentTimeMillis() - startTime.get())
                     .userAgent(header)
                     .browser(userAgent.getBrowser().toString())
                     .os(userAgent.getOperatingSystem().toString()).build();
@@ -163,7 +180,9 @@ public class AopLog {
         HttpServletResponse response = Objects.requireNonNull((ServletRequestAttributes) RequestContextHolder.getRequestAttributes()).getResponse();
 
         // 记录执行时间
-        long startTime = System.currentTimeMillis();
+//        long startTime = System.currentTimeMillis();
+
+
         //处理请求
 //        Object result = joinPoint.proceed();
         String header = request.getHeader("User-Agent");
@@ -185,7 +204,7 @@ public class AopLog {
 //            Map<String, String> rtnMap = converMap(request.getParameterMap());
 //            // 将参数所在的数组转换成json
 //            String params = JSON.toJSONString(rtnMap);
-            final ExceptionLog exceptionLog = ExceptionLog.builder()
+            final LogErrorInfo exceptionLog = LogErrorInfo.builder()
                     .threadId(Long.toString(Thread.currentThread().getId()))
                     .threadName(Thread.currentThread().getName())
                     .ip(getIp(request))
@@ -197,7 +216,6 @@ public class AopLog {
                     .exceptionMessage(stackTraceToString(e.getClass().getName(), e.getMessage(), e.getStackTrace()))
                     .httpStatus(response.getStatus())
                     .requestParams(getNameAndValue(joinPoint))
-                    .timeCost(System.currentTimeMillis() - startTime)
                     .userAgent(header)
                     .browser(userAgent.getBrowser().toString())
                     .os(userAgent.getOperatingSystem().toString()).build();

@@ -11,7 +11,7 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class ExceptionLog implements Serializable {
+public class LogErrorInfo implements Serializable {
     // 线程id
     private String threadId;
     // 线程名称

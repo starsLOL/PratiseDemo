@@ -1,8 +1,11 @@
-#服务器配置
+# 服务器配置
 server:
   port: 8899
 
-#spring 日志
+#  操作版本号
+version: 1.0.0
+
+# spring 日志
 logging:
   config: classpath:logback-spring.xml
   file:
@@ -12,7 +15,7 @@ logging:
     console: '%red(%d{yyyy-MM-dd HH:mm:ss}) %green([%thread]) %highlight(%-5level) %boldMagenta(%logger{10}) - %cyan(%msg%n)'
     # file: '%d{yyyy-MM-dd HH:mm:ss.SSS} %-5level [%thread] %logger : %msg%n'
 
-#数据库连接
+# 数据库连接
 spring:
   datasource:
     url: jdbc:mysql://localhost:3306/pratise_demo?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=Asia/Shanghai
@@ -90,16 +93,16 @@ spring:
             insert-allow:  true                                                       #允许插入操作
             delete-allow: true                                                        #删除数据操作
 
-  #热加载
+  # 热加载
   devtools:
     restart:
       additional-paths: src/main/java #额外新增的热加载目录
       enabled: true #热加载生效
       #exclude=WEB-INF/** #热加载排除目录
 
-#Mybatis配置
+# Mybatis配置
 mybatis:
-#  mapper-locations: classpath:*/*.xml
+  # mapper-locations: classpath:*/*.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   type-aliases-package: com.stars.pratise.demo.entity
   configuration:
@@ -109,7 +112,7 @@ mybatis:
     default-executor-type: REUSE
     use-actual-param-name: true
 
-#测试配置数据
+# 测试配置数据
 stars:
   blog:
     name: stars's blog

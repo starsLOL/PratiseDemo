@@ -11,7 +11,10 @@ import java.io.Serializable;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class LogVO implements Serializable {
+public class LogInfo implements Serializable {
+    // 主键id
+//    @TableId(type = IdType.ASSIGN_UUID)
+    private String id;
     // 线程id
     private String threadId;
     // 线程名称

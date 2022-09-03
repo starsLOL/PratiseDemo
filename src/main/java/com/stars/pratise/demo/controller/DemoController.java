@@ -23,6 +23,7 @@ public class DemoController {
     @Autowired
     private ConfigDemoBean configDemoBean;
 
+    @OperLog(operateModul = "demo wrong modul", operateType = "worng", operatesDesc = "this is a wrong messages")
     @GetMapping("/wrong")
     public int error() {
         int i = 9 / 0;

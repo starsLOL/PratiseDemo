@@ -1,11 +1,10 @@
 package com.stars.pratise.demo.test;
 
-import com.stars.pratise.demo.log.enums.BusinessType;
+import com.stars.pratise.demo.enums.Constants;
 
 import java.lang.reflect.InvocationTargetException;
-import java.text.SimpleDateFormat;
 
-public class demoUser {
+public class demoOperate {
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException {
 
         //“1970年1月1号0时0分0秒所差的毫秒数 时间的单位转换 1秒=1000毫秒(ms) 1分钟=60秒 1小时=60分钟=3600秒
@@ -28,11 +27,16 @@ public class demoUser {
 
 
         //将毫秒值(currentTimeMillis)转换为(年-月-日 时-分-秒)的形式,只需一行代码
-        System.out.println(new SimpleDateFormat("yy-MM-dd  HH-mm-ss").format(System.currentTimeMillis()));
+//        System.out.println(new SimpleDateFormat("yy-MM-dd  HH-mm-ss").format(System.currentTimeMillis()));
 
         //
-        System.out.println(BusinessType.DELETE.ordinal());
-        System.out.println(BusinessType.values()[3]);
+//        System.out.println(BusinessType.DELETE.ordinal());
+//        System.out.println(BusinessType.values()[3]);
+//        System.out.println(LocalDateTime.now());
+
+        System.out.println(Constants.DELETE.getOperateType());
+        System.out.println(Constants.DELETE.getDescribe());
+
 //        User user = new User((long) 1,"demo","2022-08-31 00:29:17");
 //        ArrayList<User> errorUsers = new ArrayList<User>();
 //        errorUsers.add(user);
