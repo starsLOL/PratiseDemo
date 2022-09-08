@@ -40,8 +40,6 @@ public class LogErrorInfo implements Serializable {
     private String classMethod;
     // 请求参数
     private Object requestParams;
-    // 接口耗时
-    private Long timeCost;
     // 操作系统
     private String os;
     // 浏览器

@@ -49,6 +49,22 @@ public class ResponseData<T> implements Serializable {
         this.timestamp = System.currentTimeMillis();
     }
 
+
+    /**
+     * response success result wrapper.
+     *
+     * @param data response data
+     * @param <T>  type of data class
+     * @return response result
+     */
+    public static <T> ResponseData<T> success() {
+        return ResponseData.<T>builder()
+                .message(ResultEnums.SUCCESS.getMessage())
+                .code(ResultEnums.SUCCESS.getCode())
+                .timestamp(System.currentTimeMillis())
+                .build();
+    }
+
     /**
      * response success result wrapper.
      *
@@ -87,7 +103,7 @@ public class ResponseData<T> implements Serializable {
     public static <T> ResponseData<T> fail(int code, String message) {
         return ResponseData.<T>builder()
                 .message(message)
-                .code(ResultEnums.ERROR.getCode())
+                .code(code)
                 .timestamp(System.currentTimeMillis())
                 .build();
     }

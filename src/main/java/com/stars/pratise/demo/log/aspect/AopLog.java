@@ -8,6 +8,7 @@ import com.google.common.collect.Maps;
 import com.stars.pratise.demo.log.annotation.OperLog;
 import com.stars.pratise.demo.log.doamin.LogErrorInfo;
 import com.stars.pratise.demo.log.doamin.LogInfo;
+import com.stars.pratise.demo.log.service.AsyncLogService;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -20,6 +21,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.request.RequestContextHolder;
 import org.springframework.web.context.request.ServletRequestAttributes;
 
+import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.lang.reflect.Method;
@@ -50,6 +52,9 @@ public class AopLog {
      */
     @Value("${version}")
     private String version;
+
+    @Resource
+    private AsyncLogService asyncLogService;
 
     /**
      * 统计请求的处理时间
@@ -124,7 +129,7 @@ public class AopLog {
 
             assert opLog != null;
 
-            final LogInfo l = LogInfo.builder()
+            final LogInfo logInfo = LogInfo.builder()
                     .threadId(Long.toString(Thread.currentThread().getId()))
                     .threadName(Thread.currentThread().getName())
                     .ip(getIp(request))
@@ -143,8 +148,9 @@ public class AopLog {
                     .browser(userAgent.getBrowser().toString())
                     .os(userAgent.getOperatingSystem().toString()).build();
 
-            log.info("Request Log Info : {}", JSONUtil.toJsonStr(l));
-            log.info("请求参数和处理信息 : {}", JSONUtil.toJsonStr(l));
+            asyncLogService.addLogInfo(logInfo);
+            log.info("Request Log Info : {}", JSONUtil.toJsonStr(logInfo));
+            log.info("请求参数和处理信息 : {}", JSONUtil.toJsonStr(logInfo));
         } catch (Exception e) {
             log.error("==前置通知异常==");
             log.warn("日志异常信息,记录请求日志失败：", e);
@@ -204,7 +210,7 @@ public class AopLog {
 //            Map<String, String> rtnMap = converMap(request.getParameterMap());
 //            // 将参数所在的数组转换成json
 //            String params = JSON.toJSONString(rtnMap);
-            final LogErrorInfo exceptionLog = LogErrorInfo.builder()
+            final LogErrorInfo logErrorInfo = LogErrorInfo.builder()
                     .threadId(Long.toString(Thread.currentThread().getId()))
                     .threadName(Thread.currentThread().getName())
                     .ip(getIp(request))
@@ -220,8 +226,9 @@ public class AopLog {
                     .browser(userAgent.getBrowser().toString())
                     .os(userAgent.getOperatingSystem().toString()).build();
 
-            log.error("Request Log Info : {}", JSONUtil.toJsonStr(exceptionLog));
-            log.error("请求参数和处理信息 : {}", JSONUtil.toJsonStr(exceptionLog));
+            asyncLogService.addLogErrorInfo(logErrorInfo);
+            log.error("Request Log Info : {}", JSONUtil.toJsonStr(logErrorInfo));
+            log.error("请求参数和处理信息 : {}", JSONUtil.toJsonStr(logErrorInfo));
 
 //            excepLog.setExcRequParam(params); // 请求参数
 //            excepLog.setOperMethod(methodName); // 请求方法名

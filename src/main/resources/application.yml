@@ -104,7 +104,7 @@ spring:
 mybatis:
   # mapper-locations: classpath:*/*.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
-  type-aliases-package: com.stars.pratise.demo.entity
+  type-aliases-package: com.stars.pratise.demo
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
