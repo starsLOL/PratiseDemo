@@ -15,7 +15,7 @@ import java.util.Date;
  */
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
-public class User extends BaseDTO {
+public class UserDemo extends BaseDTO {
 
     private static final long serialVersionUID = -487834996915889725L;
     /**

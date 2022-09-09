@@ -3,7 +3,7 @@ package com.stars.pratise.demo.system.controller;
 import com.stars.pratise.demo.base.Result;
 import com.stars.pratise.demo.constants.BaseEnums;
 import com.stars.pratise.demo.constants.Constants;
-import com.stars.pratise.demo.system.dto.User;
+import com.stars.pratise.demo.system.dto.UserDemo;
 import com.stars.pratise.demo.util.Results;
 import com.stars.pratise.demo.util.time.Dates;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -16,19 +16,19 @@ import java.util.List;
 /**
  * 用户Controller
  *
- * @author bojiangzhou 2017-12-31
+ * @author stars
  * @version 1.0
  */
 @RequestMapping("/sys/user")
 @RestController
 //public class UserController extends BaseController {
-public class UserController {
+public class UserControllerDemo {
 
-    private static List<User> userList = new ArrayList<>();
+    private static List<UserDemo> userList = new ArrayList<UserDemo>();
 
-    // 先静态模拟数据s
+    // 先静态模拟数据
     static {
-        User user1 = new User();
+        UserDemo user1 = new UserDemo();
         user1.setUserId(1L);
         user1.setUsername("lufei");
         user1.setNickname("蒙奇D路飞");
@@ -37,7 +37,7 @@ public class UserController {
         user1.setEnabled(Constants.Flag.YES);
         userList.add(user1);
 
-        User user2 = new User();
+        UserDemo user2 = new UserDemo();
         user2.setUserId(2L);
         user2.setUsername("namis");
         user2.setNickname("娜美");
@@ -54,12 +54,12 @@ public class UserController {
 
     @RequestMapping("/queryOne/{userId}")
     public Result queryOne(@PathVariable Long userId) {
-        User user = null;
-        for (User u : userList) {
+        UserDemo userDemo = null;
+        for (UserDemo u : userList) {
             if (u.getUserId().longValue() == userId) {
-                user = u;
+                userDemo = u;
             }
         }
-        return Results.successWithData(user);
+        return Results.successWithData(userDemo);
     }
 }
