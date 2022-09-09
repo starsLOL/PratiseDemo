@@ -39,7 +39,7 @@ public class UserController {
 
         User user2 = new User();
         user2.setUserId(2L);
-        user2.setUsername("nami");
+        user2.setUsername("namis");
         user2.setNickname("娜美");
         user2.setBirthday(Dates.parseDate("2000/7/3"));
         user2.setSex(Constants.Sex.FEMALE);
