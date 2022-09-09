@@ -26,7 +26,7 @@ public class UserController {
 
     private static List<User> userList = new ArrayList<>();
 
-    // 先静态模拟数据
+    // 先静态模拟数据s
     static {
         User user1 = new User();
         user1.setUserId(1L);
