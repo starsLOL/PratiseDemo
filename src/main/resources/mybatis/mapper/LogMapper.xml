@@ -3,7 +3,7 @@
 
 <mapper namespace="com.stars.pratise.demo.log.mapper.LogMapper">
 
-    <resultMap id="LogInfoResultMap" type="user">
+    <resultMap id="LogInfoResultMap" type="logInfo">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="threadId" property="threadId" jdbcType="VARCHAR"/>
         <result column="threadName" property="threadName" jdbcType="VARCHAR"/>
@@ -18,7 +18,7 @@
         <result column="requestParams" property="requestParams" jdbcType="LONGVARCHAR"/>
         <result column="result" property="result" jdbcType="LONGVARCHAR"/>
         <result column="timeCost" property="timeCost" jdbcType="INTEGER"/>
-        <result column="userId" property="userId" jdbcType="VARCHAR"/>
+        <result column="userId" property="userId" jdbcType="BIGINT"/>
         <result column="userName" property="userName" jdbcType="VARCHAR"/>
         <result column="os" property="os" jdbcType="VARCHAR"/>
         <result column="browser" property="browser" jdbcType="VARCHAR"/>
@@ -27,7 +27,7 @@
         <result column="createTime" property="createTime" jdbcType="TIMESTAMP"/>
     </resultMap>
 
-    <resultMap id="LogInfoResultMap" type="user">
+    <resultMap id="LogErrorInfoResultMap" type="logErrorInfo">
         <id column="id" property="id" jdbcType="BIGINT"/>
         <result column="threadId" property="threadId" jdbcType="VARCHAR"/>
         <result column="threadName" property="threadName" jdbcType="VARCHAR"/>
@@ -49,21 +49,222 @@
     </resultMap>
 
     <sql id="LogInfo_Column_List">
-    id, username, password, birthday
+    threadId, threadName, ip, url,httpMethodhttpMethod,httpStatus,operateModul,operateType,operateDesc,classMethod,requestParams,result,timeCost,userId,userName,os,browser,userAgent,    threadId, threadName, ip, url,httpMethodhttpMethod,httpStatus,operateModul,operateType,operateDesc,classMethod,requestParams,result,timeCost,userId,userName,os,browser,userAgent,version,createTime
     </sql>
 
     <sql id="LogErrorInfo_Column_List">
     sql id="LogErrorInfo_Column_List">
-    id, username, password, birthday
+        threadId, threadName, ip, url,httpMethodhttpMethod,httpStatus,userId,userName,exceptionName,exceptionMessage,classMethod,requestParams,os,browser,userAgent,version,createTime
     </sql>
 
 
-    <select id="saveLogInfo" resultMap="LogInfoResultMap">
-        select <include refid="LogInfo_Column_List"></include> from user
+    <select id="findAllLogInfo" resultMap="LogInfoResultMap">
+        select <include refid="LogInfo_Column_List"></include> from log_info
     </select>
 
-    <select id="saveLogErrorInfo" resultMap="LogErrorInfoResultMap">
-        select <include refid="LogErrorInfo_Column_List"></include> from user
+    <select id="LogErrorInfo" resultMap="LogErrorInfoResultMap">
+        select <include refid="LogErrorInfo_Column_List"></include> from log_error_info
     </select>
 
+
+    <insert id="saveLogErrorInfo" parameterType="com.stars.pratise.demo.log.doamin.LogErrorInfo">
+        insert into log_error_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="threadId != null and threadId != ''">
+                threadId,
+            </if>
+            <if test="threadName != null and threadName != ''">
+                threadName,
+            </if>
+            <if test="ip != null and ip != ''">
+                ip,
+            </if>
+            <if test="url != null and url != ''">
+                url,
+            </if>
+            <if test="httpMethod != null and httpMethod != ''">
+                httpMethod,
+            </if>
+            <if test="httpStatus != null and httpStatus != ''">
+                httpStatus,
+            </if>
+            <if test="userId != null and userId != ''">
+                userId,
+            </if>
+            <if test="userName != null and userName != ''">
+                userName,
+            </if>
+            <if test="exceptionName != null and exceptionName != ''">
+                exceptionName,
+            </if>
+            <if test="exceptionMessage != null and exceptionMessage != ''">
+                exceptionMessage,
+            </if>
+            <if test="classMethod != null and classMethod != ''">
+                classMethod,
+            </if>
+            <if test="requestParams != null and requestParams != ''">
+                requestParams,
+            </if>
+            <if test="os != null and os != ''">
+                os,
+            </if>
+            <if test="browser != null and browser != ''">
+                browser,
+            </if>
+            <if test="userAgent != null and userAgent != ''">
+                userAgent,
+            </if>
+            <if test="version != null and version != ''">
+                version,
+            </if>
+            <if test="createTime != null and createTime != ''">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="threadId != null  and threadId !=''">#{threadId,jdbcType=VARCHAR},
+            </if>
+            <if test="threadName != null  and threadName !=''">#{threadName,jdbcType=VARCHAR},
+            </if>
+            <if test="ip != null  and ip !=''">#{ip,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null  and url !=''">#{url,jdbcType=VARCHAR},
+            </if>
+            <if test="httpMethod != null  and httpMethod !=''">#{httpMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="httpStatus != null  and httpStatus !=''">#{httpStatus,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null  and userId !=''">#{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null  and userName !=''">#{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="exceptionName != null  and exceptionName !=''">#{exceptionName,jdbcType=VARCHAR},
+            </if>
+            <if test="exceptionMessage != null  and exceptionMessage !=''">#{exceptionMessage,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="classMethod != null  and classMethod !=''">#{classMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="requestParams != null  and requestParams !=''">#{requestParams,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="os != null  and os !=''">#{os,jdbcType=VARCHAR},
+            </if>
+            <if test="browser != null  and browser !=''">#{browser,jdbcType=VARCHAR},
+            </if>
+            <if test="userAgent != null  and userAgent !=''">#{userAgent,jdbcType=VARCHAR},
+            </if>
+            <if test="version != null  and version !=''">#{version,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null  and createTime !=''">#{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+
+    <insert id="saveLogInfo" parameterType="com.stars.pratise.demo.log.doamin.LogInfo">
+        insert into log_info
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="threadId != null and threadId != ''">
+                threadId,
+            </if>
+            <if test="threadName != null and threadName != ''">
+                threadName,
+            </if>
+            <if test="ip != null and ip != ''">
+                ip,
+            </if>
+            <if test="url != null and url != ''">
+                url,
+            </if>
+            <if test="httpMethod != null and httpMethod != ''">
+                httpMethod,
+            </if>
+            <if test="httpStatus != null and httpStatus != ''">
+                httpStatus,
+            </if>
+            <if test="operateModul != null and operateModul != ''">
+                operateModul,
+            </if>
+            <if test="operateType != null and operateType != ''">
+                operateType,
+            </if>
+            <if test="operateDesc != null and operateDesc != ''">
+                operateDesc,
+            </if>
+            <if test="classMethod != null and classMethod != ''">
+                classMethod,
+            </if>
+            <if test="requestParams != null and requestParams != ''">
+                requestParams,
+            </if>
+            <if test="result != null and result != ''">
+                result,
+            </if>
+            <if test="timeCost != null and timeCost != ''">
+                timeCost,
+            </if>
+            <if test="userId != null and userId != ''">
+                userId,
+            </if>
+            <if test="userName != null and userName != ''">
+                userName,
+            </if>
+            <if test="os != null and os != ''">
+                os,
+            </if>
+            <if test="browser != null and browser != ''">
+                browser,
+            </if>
+            <if test="userAgent != null and userAgent != ''">
+                userAgent,
+            </if>
+            <if test="version != null and version != ''">
+                version,
+            </if>
+            <if test="createTime != null">
+                createTime,
+            </if>
+        </trim>
+        <trim prefix="values(" suffix=")" suffixOverrides=",">
+            <if test="threadId != null  and threadId !=''">#{threadId,jdbcType=VARCHAR},
+            </if>
+            <if test="threadName != null  and threadName !=''">#{threadName,jdbcType=VARCHAR},
+            </if>
+            <if test="ip != null  and ip !=''">#{ip,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null  and url !=''">#{url,jdbcType=VARCHAR},
+            </if>
+            <if test="httpMethod != null  and httpMethod !=''">#{httpMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="httpStatus != null  and httpStatus !=''">#{httpStatus,jdbcType=INTEGER},
+            </if>
+            <if test="operateModul != null  and operateModul !=''">#{operateModul,jdbcType=VARCHAR},
+            </if>
+            <if test="operateType != null  and operateType !=''">#{operateType,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="operateDesc != null  and operateDesc !=''">#{operateDesc,jdbcType=VARCHAR},
+            </if>
+            <if test="classMethod != null  and classMethod !=''">#{classMethod,jdbcType=VARCHAR},
+            </if>
+            <if test="requestParams != null  and requestParams !=''">#{requestParams,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="result != null  and result !=''">#{result,jdbcType=LONGVARCHAR},
+            </if>
+            <if test="timeCost != null  and timeCost !=''">#{timeCost,jdbcType=INTEGER},
+            </if>
+            <if test="userId != null  and userId !=''">#{userId,jdbcType=BIGINT},
+            </if>
+            <if test="userName != null  and userName !=''">#{userName,jdbcType=VARCHAR},
+            </if>
+            <if test="os != null  and os !=''">#{os,jdbcType=VARCHAR},
+            </if>
+            <if test="browser != null  and browser !=''">#{browser,jdbcType=VARCHAR},
+            </if>
+            <if test="userAgent != null  and userAgent !=''">#{userAgent,jdbcType=VARCHAR},
+            </if>
+            <if test="version != null  and version !=''">#{version,jdbcType=VARCHAR},
+            </if>
+            <if test="createTime != null">#{createTime,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
 </mapper>

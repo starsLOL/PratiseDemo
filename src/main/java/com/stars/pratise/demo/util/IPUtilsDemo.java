@@ -2,7 +2,7 @@ package com.stars.pratise.demo.util;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class IPUtils {
+public class IPUtilsDemo {
 
     /**
      * 获取IP地址

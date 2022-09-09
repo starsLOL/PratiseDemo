@@ -10,6 +10,7 @@ import org.springframework.stereotype.Repository;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @Repository
 @Service("asyncLogService")
@@ -38,6 +39,26 @@ public class AsyncLogServiceImpl implements AsyncLogService {
             return ResponseDataUtil.success();
         } else {
             return ResponseDataUtil.failure();
+        }
+    }
+
+    @Override
+    public <T> ResponseData findAllLogInfo() {
+        List<LogInfo> logInfos = logMapper.findAllLogInfo();
+        if (logInfos == null) {
+            return ResponseDataUtil.buildError();
+        } else {
+            return ResponseDataUtil.success(logInfos);
+        }
+    }
+
+    @Override
+    public <T> ResponseData findAllErrorInfo() {
+        List<LogErrorInfo> logErrorInfos = logMapper.findAllErrorInfo();
+        if (logErrorInfos == null) {
+            return ResponseDataUtil.buildError();
+        } else {
+            return ResponseDataUtil.success(logErrorInfos);
         }
     }
 
