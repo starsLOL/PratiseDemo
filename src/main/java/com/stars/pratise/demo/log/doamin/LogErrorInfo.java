@@ -1,9 +1,11 @@
 package com.stars.pratise.demo.log.doamin;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.io.Serializable;
 import java.time.LocalDateTime;
@@ -49,6 +51,8 @@ public class LogErrorInfo implements Serializable {
     // 版本号
     private String version;
     // 创建时间
+//    @DateTimeFormat(pattern = "yyy-MM-dd HH:mm:ss")
+//    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private LocalDateTime createTime;
 
 }

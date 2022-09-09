@@ -2,7 +2,7 @@ package com.stars.pratise.demo.util;
 
 import javax.servlet.http.HttpServletRequest;
 
-public class HttpUtils {
+public class HttpUtilsDemo {
     private static final String SIGN = ",";
 
     private static final String STR_UNKNOWN = "unknown";

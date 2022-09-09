@@ -8,4 +8,8 @@ public interface AsyncLogService {
     <T> ResponseData addLogInfo(LogInfo logInfo);
 
     <T> ResponseData addLogErrorInfo(LogErrorInfo logErrorInfo);
+
+    <T> ResponseData findAllLogInfo();
+
+    <T> ResponseData findAllErrorInfo();
 }

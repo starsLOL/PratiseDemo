@@ -9,6 +9,8 @@ import com.stars.pratise.demo.log.annotation.OperLog;
 import com.stars.pratise.demo.log.doamin.LogErrorInfo;
 import com.stars.pratise.demo.log.doamin.LogInfo;
 import com.stars.pratise.demo.log.service.AsyncLogService;
+import com.stars.pratise.demo.util.time.DateUtilsThree;
+import com.stars.pratise.demo.util.time.LocalDateTimeUtils;
 import eu.bitwalker.useragentutils.UserAgent;
 import lombok.extern.slf4j.Slf4j;
 import org.aspectj.lang.JoinPoint;
@@ -146,7 +148,9 @@ public class AopLog {
                     .timeCost(System.currentTimeMillis() - startTime.get())
                     .userAgent(header)
                     .browser(userAgent.getBrowser().toString())
-                    .os(userAgent.getOperatingSystem().toString()).build();
+                    .os(userAgent.getOperatingSystem().toString())
+                    .createTime(LocalDateTimeUtils.stringToLocalDateTime(DateUtilsThree.dateTime))
+                    .build();
 
             asyncLogService.addLogInfo(logInfo);
             log.info("Request Log Info : {}", JSONUtil.toJsonStr(logInfo));
@@ -224,7 +228,9 @@ public class AopLog {
                     .requestParams(getNameAndValue(joinPoint))
                     .userAgent(header)
                     .browser(userAgent.getBrowser().toString())
-                    .os(userAgent.getOperatingSystem().toString()).build();
+                    .os(userAgent.getOperatingSystem().toString())
+                    .createTime(LocalDateTimeUtils.stringToLocalDateTime(DateUtilsThree.dateTime))
+                    .build();
 
             asyncLogService.addLogErrorInfo(logErrorInfo);
             log.error("Request Log Info : {}", JSONUtil.toJsonStr(logErrorInfo));
