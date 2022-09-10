@@ -1,0 +1,2 @@
+# PratiseDemo
+SpringBoot sample study 
