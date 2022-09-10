@@ -8,8 +8,8 @@ package com.stars.pratise.demo.exception;
  * @date 2022-09-10
  */
 public class BaseException extends RuntimeException {
-    private static final long serialVersionUID = 3130573143041496768L;
 
+    private static final long serialVersionUID = 3130573143041496768L;
     /**
      * 错误编码
      */
