@@ -8,6 +8,10 @@ import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
 
 public class demoOperate {
+
+//    public static int i;
+//    public static Integer j;
+
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, ParseException {
 
         //“1970年1月1号0时0分0秒所差的毫秒数 时间的单位转换 1秒=1000毫秒(ms) 1分钟=60秒 1小时=60分钟=3600秒
@@ -38,6 +42,28 @@ public class demoOperate {
 
 //        System.out.println(LocalDateTime.now());
         System.out.println(LocalDateTimeUtils.stringToLocalDateTime(DateUtilsThree.dateTime));
+
+//        Java为每个原始类型提供了封装类，Integer是java为int提供的封装类。
+//        int的默认值为0，而Integer的默认值为null，即Integer可以区分出未赋值和值为0的区别，int则无法表达出未赋值的情况。
+        Integer integer = Integer.valueOf("100");
+        System.out.println(integer);
+
+//        Java静态变量初始化遵循以下规则:
+//        1.静态变量会按照声明的顺序先依次声明并设置为该类型的默认值，但不赋值为初始化的值。
+//        2.声明完毕后,再按声明的顺序依次设置为初始化的值，如果没有初始化的值就跳
+
+//        int i;
+//        Integer j;
+//        System.out.println(i);
+//        System.out.println(j);
+
+        String str = " 1, 2, 3,   4 ";
+//        System.out.println(str.replaceAll("\\s+", ""));
+        for (String s : str.replaceAll("\\s+", "").split(",")) {
+            System.out.println(s);
+        }
+
+
 //        System.out.println(DateTimeUtilFour.getTodayHMS());
 //        System.out.println(DateTimeUtilFour.getToday());
 //        System.out.println(DateTimeUtilFour.getCurrentDateTime());

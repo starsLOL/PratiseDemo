@@ -8,10 +8,8 @@ import java.util.List;
  * @author stars
  * @version 1.0
  * @name BaseService
- * @date 2022-09-10
  */
-
-interface Service<T> {
+public interface Service<T> {
 
     //
     // insert
@@ -23,8 +21,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T insert(T record);
 
     /**
@@ -33,8 +29,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> insert(List<T> recordList);
 
     /**
@@ -43,8 +37,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T insertSelective(T record);
 
     /**
@@ -53,8 +45,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> insertSelective(List<T> recordList);
 
     //
@@ -67,8 +57,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T update(T record);
 
     /**
@@ -77,8 +65,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> update(List<T> recordList);
 
     /**
@@ -87,8 +73,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T updateSelective(T record);
 
     /**
@@ -97,8 +81,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> updateSelective(List<T> recordList);
 
     //
@@ -111,8 +93,6 @@ interface Service<T> {
      * @param id id不能为空
      * @return
      */
-
-
     int delete(Long id);
 
     /**
@@ -120,8 +100,6 @@ interface Service<T> {
      *
      * @param ids 类似1,2,3
      */
-
-
     int delete(String ids);
 
     /**
@@ -129,8 +107,6 @@ interface Service<T> {
      *
      * @param ids 类似[1,2,3]，不能为空
      */
-
-
     int delete(Long[] ids);
 
     /**
@@ -139,8 +115,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     int delete(T record);
 
     /**
@@ -149,8 +123,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     int delete(List<T> recordList);
 
     //
@@ -163,8 +135,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T persist(T record);
 
     /**
@@ -173,8 +143,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> persist(List<T> recordList);
 
     /**
@@ -183,8 +151,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T persistSelective(T record);
 
     /**
@@ -193,8 +159,6 @@ interface Service<T> {
      * @param recordList
      * @return
      */
-
-
     List<T> persistSelective(List<T> recordList);
 
 
@@ -208,8 +172,6 @@ interface Service<T> {
      * @param id 不能为空
      * @return
      */
-
-
     T get(Long id);
 
     /**
@@ -218,8 +180,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     T get(T record);
 
     /**
@@ -229,8 +189,6 @@ interface Service<T> {
      * @param value 不能为空
      * @return
      */
-
-
     T get(String key, Object value);
 
 
@@ -240,8 +198,6 @@ interface Service<T> {
      * @param ids 如 "1,2,3,4"
      * @return
      */
-
-
     List<T> select(String ids);
 
     /**
@@ -250,8 +206,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     List<T> select(T record);
 
     /**
@@ -261,8 +215,6 @@ interface Service<T> {
      * @param value
      * @return
      */
-
-
     List<T> select(String key, Object value);
 
     /**
@@ -273,8 +225,6 @@ interface Service<T> {
      * @param pageSize
      * @return
      */
-
-
     List<T> select(T record, int pageNum, int pageSize);
 
     /**
@@ -282,8 +232,6 @@ interface Service<T> {
      *
      * @return
      */
-
-
     List<T> selectAll();
 
     /**
@@ -292,9 +240,6 @@ interface Service<T> {
      * @param record
      * @return
      */
-
-
     int count(T record);
-
 
 }

@@ -8,6 +8,7 @@ import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
+import org.springframework.context.annotation.EnableAspectJAutoProxy;
 import org.springframework.context.annotation.Primary;
 
 import javax.sql.DataSource;
@@ -17,10 +18,11 @@ import javax.sql.DataSource;
  *  Druid配置类
  * </pre>
  *
- * @author nicky
+ * @author stars
+ *
  * <pre>
  * 修改记录
- *    修改后版本:     修改人：  修改日期: 2019年12月15日  修改内容:
+ *    修改后版本:     修改人：  修改日期:    修改内容:
  * </pre>
  */
 @Configuration
@@ -29,12 +31,13 @@ public class DriudConfig {
     @Primary
     @Bean
     @ConfigurationProperties(prefix = "spring.datasource")
-    public DataSource dataSource(){
+    public DataSource dataSource() {
         return new DruidDataSource();
     }
 
     /**
      * 注册ServletRegistrationBean
+     *
      * @return
      */
     @Bean
@@ -55,6 +58,7 @@ public class DriudConfig {
 
     /**
      * 注册FilterRegistrationBean
+     *
      * @return
      */
     @Bean
@@ -63,7 +67,7 @@ public class DriudConfig {
         //添加过滤规则.
         bean.addUrlPatterns("/*");
         //添加不需要忽略的格式信息.
-        bean.addInitParameter("exclusions","*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
+        bean.addInitParameter("exclusions", "*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*");
         return bean;
     }
 }
