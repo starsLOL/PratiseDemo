@@ -1,8 +1,8 @@
 package com.stars.pratise.demo.log.service.impl;
 
 import com.stars.pratise.demo.common.ResponseData;
-import com.stars.pratise.demo.log.doamin.LogErrorInfo;
-import com.stars.pratise.demo.log.doamin.LogInfo;
+import com.stars.pratise.demo.log.domain.LogErrorInfo;
+import com.stars.pratise.demo.log.domain.LogInfo;
 import com.stars.pratise.demo.log.mapper.LogMapper;
 import com.stars.pratise.demo.log.service.AsyncLogService;
 import com.stars.pratise.demo.util.ResponseDataUtil;

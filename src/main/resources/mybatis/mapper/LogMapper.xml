@@ -67,7 +67,7 @@
     </select>
 
 
-    <insert id="saveLogErrorInfo" parameterType="com.stars.pratise.demo.log.doamin.LogErrorInfo">
+    <insert id="saveLogErrorInfo" parameterType="logErrorInfo">
         insert into log_error_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="threadId != null and threadId != ''">
@@ -160,7 +160,7 @@
         </trim>
     </insert>
 
-    <insert id="saveLogInfo" parameterType="com.stars.pratise.demo.log.doamin.LogInfo">
+    <insert id="saveLogInfo" parameterType="logInfo">
         insert into log_info
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="threadId != null and threadId != ''">

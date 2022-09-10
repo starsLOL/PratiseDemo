@@ -1,7 +1,7 @@
 package com.stars.pratise.demo.log.mapper;
 
-import com.stars.pratise.demo.log.doamin.LogErrorInfo;
-import com.stars.pratise.demo.log.doamin.LogInfo;
+import com.stars.pratise.demo.log.domain.LogErrorInfo;
+import com.stars.pratise.demo.log.domain.LogInfo;
 import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 
