@@ -8,7 +8,7 @@ import tk.mybatis.mapper.common.special.InsertListMapper;
 /**
  * BaseMapper
  *
- * @author bojiangzhou 2017-12-31
+ * @author stars
  * @version 1.0
  * @name BaseMapper
  */

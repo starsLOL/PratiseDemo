@@ -20,9 +20,9 @@ public class UserServiceImpl implements UserService {
     public <T> ResponseData findAllUser() {
 
         List<User> list = userMapper.findAllUser();
-        if(list == null){
+        if (list == null) {
             return ResponseDataUtil.failure();
-        }else{
+        } else {
             return ResponseDataUtil.success(list);
         }
     }

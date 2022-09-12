@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <context id="oracle" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+
+        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+            <!-- 该配置会使生产的Mapper自动继承MyMapper -->
+            <property name="mappers" value="com.stars.pratise.demo.base.MyMapper"/>
+            <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
+            <property name="caseSensitive" value="false"/>
+        </plugin>
+
+        <!-- 阻止生成自动注释 -->
+        <commentGenerator>
+            <property name="javaFileEncoding" value="UTF-8"/>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+
+        <!-- 数据库链接地址账号密码 -->
+        <jdbcConnection
+                driverClass="com.mysql.cj.jdbc.Driver"
+                connectionURL="jdbc:mysql://localhost:3306/pratise_demo?allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai"
+                userId="root"
+                password="123456">
+            <property name="nullCatalogMeansCurrent" value="true"/>
+        </jdbcConnection>
+
+        <!-- 类型转换 -->
+        <javaTypeResolver>
+            <!-- 是否使用bigDecimal， false可自动转化以下类型（Long, Integer, Short, etc.） -->
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+
+        <!-- 生成Model类存放位置 -->
+        <!-- targetPackage：生成的实体类所在的包 -->
+        <!-- targetProject：生成的实体类所在的硬盘位置 -->
+        <javaModelGenerator targetPackage="com.stars.pratise.demo.domain" targetProject="src/main/java">
+            <!-- 是否允许子包 -->
+            <property name="enableSubPackages" value="false"/>
+            <!-- 是否对modal添加构造函数 -->
+            <property name="constructorBased" value="true"/>
+            <!-- 是否清理从数据库中查询出的字符串左右两边的空白字符 -->
+            <property name="trimStrings" value="true"/>
+            <!-- 建立modal对象是否不可改变 即生成的modal对象不会有setter方法，只有构造方法 -->
+            <property name="immutable" value="false"/>
+        </javaModelGenerator>
+
+        <!-- 生成映射文件存放位置 -->
+        <!-- targetPackage 和  targetProject：生成的  java interface 文件的包和位置 -->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+            <!-- 是否在当前路径下新加一层schema,ex：false路径com.qikegu.demo.model， com.qikegu.demo.model.[schemaName] -->
+            <property name="enableSubPackages" value="false"/>
+        </sqlMapGenerator>
+
+        <!-- 生成Dao类存放位置 -->
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件的代码
+            type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+            type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.stars.pratise.demo.mapper"
+                             targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+
+        <!-- 配置需要生成的表 -->
+        <!-- 配置表信息 -->
+        <!-- schema即为数据库名 tableName为对应的数据库表 domainObjectName是要生成的实体类 enable*ByExample, 是否生成 example类   -->
+        <!-- 不同的表，修改tableName和domainObjectName就可以 -->
+        <table tableName="book" domainObjectName="Book" enableCountByExample="false" enableUpdateByExample="false"
+               enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false">
+            <generatedKey column="id" sqlStatement="Mysql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>
+
+        <!--        classPathEntry：配置jdbc驱动包-->
+        <!--        commentGenerator：注解相关配置-->
+        <!--        classPathEntry：配置jdbc驱动包-->
+        <!--        commentGenerator-->
+        <!--        suppressDate：是否自动去除注释时间戳-->
+        <!--        suppressAllComments：是否去除自动生成的注释-->
+        <!--        jdbcConnection：复制配置文件中的jdbc配置就可以-->
+        <!--        forceBigDecimals：是否强制把数据库中的decimal类型和number类型转换为BigDecimal-->
+        <!--        javaModelGenerator：生成model的存放位置-->
+        <!--        sqlMapGenerator:生成xml文件的存放位置-->
+        <!--        javaClientGenerator：生成mapper接口文件的位置，type类型有如下选择：-->
+        <!--        ANNOTATEDMAPPER,生成Java Model 和基于注解的Mapper对象-->
+        <!--        MIXEDMAPPER,生成基于注解的Java Model 和相应的Mapper对象-->
+        <!--        XMLMAPPER,生成SQLMap XML文件和独立的Mapper接口-->
+        <!--        table：要自动生成的表-->
+        <!--        tableName为数据库中表的名称，domainObjectName为映射的实体类的名称&ndash;&gt;-->
+        <!--        schema：数据库的schema；-->
+        <!--        catalog：数据库的catalog；-->
+        <!--        alias：为数据表设置的别名，如果设置了alias，那么生成的所有的SELECT SQL语句中，列名会变成：alias_actualColumnName-->
+        <!--        domainObjectName：生成的domain类的名字，如果不设置，直接使用表名作为domain类的名字；可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面；-->
+        <!--        enableInsert（默认true）：指定是否生成insert语句；-->
+        <!--        enableSelectByPrimaryKey（默认true）：指定是否生成按照主键查询对象的语句（就是getById或get）；-->
+        <!--        enableSelectByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询语句；-->
+        <!--        enableUpdateByPrimaryKey（默认true）：指定是否生成按照主键修改对象的语句（即update)；-->
+        <!--        enableDeleteByPrimaryKey（默认true）：指定是否生成按照主键删除对象的语句（即delete）；-->
+        <!--        enableDeleteByExample（默认true）：MyBatis3Simple为false，指定是否生成动态删除语句；-->
+        <!--        enableCountByExample（默认true）：MyBatis3Simple为false，指定是否生成动态查询总条数语句（用于分页的总条数查询）；-->
+        <!--        enableUpdateByExample（默认true）：MyBatis3Simple为false，指定是否生成动态修改语句（只修改对象中不为空的属性）；-->
+        <!--        modelType：参考context元素的defaultModelType，相当于覆盖；-->
+        <!--        delimitIdentifiers：参考tableName的解释，注意，默认的delimitIdentifiers是双引号，如果类似MYSQL这样的数据库，使用的是`（反引号，那么还需要设置context的beginningDelimiter和endingDelimiter属性）-->
+        <!--        delimitAllColumns：设置是否所有生成的SQL中的列名都使用标识符引起来。默认为false，delimitIdentifiers参考context的属性-->

@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
  * @author stars
  * @version 1.0
  */
-@Service
+@Service("sysUserService")
 public class SysUserServiceImpl extends BaseService<SysUser> implements SysUserService {
 
 }

@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.config;
+package com.stars.pratise.demo.config.mybatis;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

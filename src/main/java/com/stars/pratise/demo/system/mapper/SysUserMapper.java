@@ -5,7 +5,7 @@ import com.stars.pratise.demo.base.Mapper;
 import com.stars.pratise.demo.system.dto.SysUser;
 
 /**
- * @author bojiangzhou 2018-01-06
+ * @author satrs
  * @version 1.0
  * @name UserMapper
  */

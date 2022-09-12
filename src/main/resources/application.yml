@@ -105,7 +105,9 @@ mybatis:
   # mapper-locations: classpath:*/*.xml
   mapper-locations: classpath:mybatis/mapper/*.xml
   # 多个配置可以使用英文逗号隔开
-  type-aliases-package: com.stars.pratise.demo.entity,com.stars.pratise.demo.log.domain,com.stars.pratise.demo.system.dto
+  type-aliases-package: com.stars.pratise.demo.entity , com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto , com.stars.pratise.demo.domain
+  property:
+    order: BEFORE
   configuration:
     map-underscore-to-camel-case: true
     cache-enabled: true
@@ -130,6 +132,7 @@ pagehelper:
 
 # 通用Mapper设置
 mapper:
-  mappers: com.stars.pratise.demo.base.Mapper
+  mappers: com.stars.pratise.demo.base.Mapper,com.stars.pratise.demo.base.MyMapper
+#  mappers: com.stars.pratise.demo.base.Mapper
   not-empty: false
   identity: MYSQL

@@ -6,6 +6,7 @@ import com.stars.pratise.demo.util.time.LocalDateTimeUtils;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
+import java.util.Date;
 
 public class demoOperate {
 
@@ -80,6 +81,8 @@ public class demoOperate {
         System.out.println(DemoEums.TEST.getDesc());
 
         System.out.println("hello world");
+
+        System.out.println(new Date());
 
 //        User user = new User((long) 1,"demo","2022-08-31 00:29:17");
 //        ArrayList<User> errorUsers = new ArrayList<User>();
