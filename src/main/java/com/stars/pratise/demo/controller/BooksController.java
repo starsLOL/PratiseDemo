@@ -1,5 +1,7 @@
 package com.stars.pratise.demo.controller;
 
+import com.github.pagehelper.PageHelper;
+import com.github.pagehelper.PageInfo;
 import com.stars.pratise.demo.common.ResponseData;
 import com.stars.pratise.demo.domain.Book;
 import com.stars.pratise.demo.service.BookService;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Date;
+import java.util.List;
 
 @RestController
 public class BooksController {
@@ -29,6 +32,19 @@ public class BooksController {
 ////        this.bookService.save(book);
 //        System.out.println(bookService.selectAll());
         return ResponseDataUtil.success(this.bookService.selectAll());
+
+    }
+
+    @GetMapping("/testPager")
+    public <T> ResponseData testPager() {
+        PageHelper.startPage(1, 1);
+        List<Book> list = bookService.selectAll();
+        PageInfo<Book> pageInfo = new PageInfo<Book>(list);
+        List<Book> result = pageInfo.getList();
+        for (Book b : result) {
+            System.out.println(b.getName());
+        }
+        return ResponseDataUtil.success();
 
     }
 }
