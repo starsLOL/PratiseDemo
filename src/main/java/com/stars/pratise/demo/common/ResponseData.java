@@ -14,6 +14,8 @@ import java.io.Serializable;
 @AllArgsConstructor //创建一个全参构造函数
 public class ResponseData<T> implements Serializable {
 
+//    如果是ResponseInfo<T>，那么泛型怎么指定，<T> ResponseInfo<T>这样返回可以更好的指定泛型
+
 
     /**
      * response code, 200 -> OK.
@@ -53,8 +55,7 @@ public class ResponseData<T> implements Serializable {
     /**
      * response success result wrapper.
      *
-     * @param data response data
-     * @param <T>  type of data class
+     * @param <T> type of data class
      * @return response result
      */
     public static <T> ResponseData<T> success() {
@@ -95,7 +96,7 @@ public class ResponseData<T> implements Serializable {
     /**
      * response error result wrapper.
      *
-     * @param data    response data
+     * @param code    response data
      * @param message error message
      * @param <T>     type of data class
      * @return response result
@@ -104,6 +105,21 @@ public class ResponseData<T> implements Serializable {
         return ResponseData.<T>builder()
                 .message(message)
                 .code(code)
+                .timestamp(System.currentTimeMillis())
+                .build();
+    }
+
+    /**
+     * response error result wrapper.
+     *
+     * @param resultEnums ResultEnums resultEnums
+     * @param <T>         type of data class
+     * @return response result
+     */
+    public static <T> ResponseData<T> fail(ResultEnums resultEnums) {
+        return ResponseData.<T>builder()
+                .message(resultEnums.getMessage())
+                .code(resultEnums.getCode())
                 .timestamp(System.currentTimeMillis())
                 .build();
     }

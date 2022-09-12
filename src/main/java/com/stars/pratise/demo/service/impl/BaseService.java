@@ -1,17 +1,18 @@
 package com.stars.pratise.demo.service.impl;
 
+import com.stars.pratise.demo.base.MyMapper;
 import com.stars.pratise.demo.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
-import tk.mybatis.mapper.common.Mapper;
+//import tk.mybatis.mapper.common.Mapper;
 
 import java.util.List;
 
 public abstract class BaseService<T> implements IService<T> {
 
     @Autowired
-    protected Mapper<T> mapper;
+    protected MyMapper<T> mapper;
 
-    public Mapper<T> getMapper() {
+    public MyMapper<T> getMapper() {
         return mapper;
     }
 

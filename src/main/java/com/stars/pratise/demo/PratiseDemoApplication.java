@@ -10,7 +10,7 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 @SpringBootApplication
 @EnableConfigurationProperties({ConfigTestBean.class, ConfigDemoBean.class})
 //要让Spring Boot扫描到Mapper接口，需要在Spring Boot入口类中加入@MapperScan("com.stars.pratise.demo.mapper")注解。
-//@MapperScan("com.stars.pratise.demo.mapper")
+//@MapperScan("com.stars.pratise.demo.test.mapper")
 public class PratiseDemoApplication {
 
     public static void main(String[] args) {

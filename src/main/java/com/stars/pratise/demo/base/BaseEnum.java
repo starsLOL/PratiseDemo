@@ -5,7 +5,6 @@ package com.stars.pratise.demo.base;
  *
  * @author stars
  * @version 1.0
- * @date 2022-09-10
  */
 public interface BaseEnum<K, V> {
 

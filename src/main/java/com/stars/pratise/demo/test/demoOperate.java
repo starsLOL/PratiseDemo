@@ -15,6 +15,53 @@ public class demoOperate {
 
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, ParseException {
 
+
+        /**
+         * 返回分页成功数据
+         */
+//        public CommonResult pageSuccess(List data) {
+//            PageInfo pageInfo = new PageInfo(data);
+//            Map<String, Object> result = new HashMap<>();
+//            result.put("pageSize", pageInfo.getPageSize());
+//            result.put("totalPage", pageInfo.getPages());
+//            result.put("total", pageInfo.getTotal());
+//            result.put("pageNum", pageInfo.getPageNum());
+//            result.put("list", pageInfo.getList());
+//            this.code = SUCCESS;
+//            this.message = "操作成功";
+//            this.data = result;
+//            return this;
+//        }
+
+
+        /**
+         * copy原有的分页信息，除数据
+         *
+         * @param ordinal
+         * @param <T>
+         * @return
+         */
+//        private <T> PageInfo<T> copyPageInfo(PageInfo ordinal) {
+//            PageInfo<T> returnBo = new PageInfo<T>();
+//            returnBo.setPageSize(ordinal.getPageSize());
+//            returnBo.setPageNum(ordinal.getPageNum());
+//            returnBo.setEndRow(ordinal.getEndRow());
+//            returnBo.setTotal(ordinal.getTotal());
+//            returnBo.setHasNextPage(ordinal.isHasNextPage());
+//            returnBo.setHasPreviousPage(ordinal.isHasPreviousPage());
+//            returnBo.setIsFirstPage(ordinal.isIsFirstPage());
+//            returnBo.setIsLastPage(ordinal.isIsLastPage());
+//            returnBo.setNavigateFirstPage(ordinal.getNavigateFirstPage());
+//            returnBo.setNavigateLastPage(ordinal.getNavigateLastPage());
+//            returnBo.setNavigatepageNums(ordinal.getNavigatepageNums());
+//            returnBo.setSize(ordinal.getSize());
+//            returnBo.setPrePage(ordinal.getPrePage());
+//            returnBo.setNextPage(ordinal.getNextPage());
+//            return returnBo;
+//        }
+
+
+
         //“1970年1月1号0时0分0秒所差的毫秒数 时间的单位转换 1秒=1000毫秒(ms) 1分钟=60秒 1小时=60分钟=3600秒
 //        System.out.println(LocalDateTime.now());
 //
@@ -42,12 +89,12 @@ public class demoOperate {
 //        System.out.println(DateUtil.format(new Date(), DatePattern.NORM_DATETIME_FORMAT));
 
 //        System.out.println(LocalDateTime.now());
-        System.out.println(LocalDateTimeUtils.stringToLocalDateTime(DateUtilsThree.dateTime));
-
-//        Java为每个原始类型提供了封装类，Integer是java为int提供的封装类。
-//        int的默认值为0，而Integer的默认值为null，即Integer可以区分出未赋值和值为0的区别，int则无法表达出未赋值的情况。
-        Integer integer = Integer.valueOf("100");
-        System.out.println(integer);
+//        System.out.println(LocalDateTimeUtils.stringToLocalDateTime(DateUtilsThree.dateTime));
+//
+////        Java为每个原始类型提供了封装类，Integer是java为int提供的封装类。
+////        int的默认值为0，而Integer的默认值为null，即Integer可以区分出未赋值和值为0的区别，int则无法表达出未赋值的情况。
+//        Integer integer = Integer.valueOf("100");
+//        System.out.println(integer);
 
 //        Java静态变量初始化遵循以下规则:
 //        1.静态变量会按照声明的顺序先依次声明并设置为该类型的默认值，但不赋值为初始化的值。
@@ -58,11 +105,11 @@ public class demoOperate {
 //        System.out.println(i);
 //        System.out.println(j);
 
-        String str = " 1, 2, 3,   4 ";
-//        System.out.println(str.replaceAll("\\s+", ""));
-        for (String s : str.replaceAll("\\s+", "").split(",")) {
-            System.out.println(s);
-        }
+//        String str = " 1, 2, 3,   4 ";
+////        System.out.println(str.replaceAll("\\s+", ""));
+//        for (String s : str.replaceAll("\\s+", "").split(",")) {
+//            System.out.println(s);
+//        }
 
 
 //        System.out.println(DateTimeUtilFour.getTodayHMS());
@@ -78,11 +125,11 @@ public class demoOperate {
 //        System.out.println(Constants.DELETE.getOperateType());
 //        System.out.println(Constants.DELETE.getDescribe());
 
-        System.out.println(DemoEums.TEST.getDesc());
-
-        System.out.println("hello world");
-
-        System.out.println(new Date());
+//        System.out.println(DemoEums.TEST.getDesc());
+//
+//        System.out.println("hello world");
+//
+//        System.out.println(new Date());
 
 //        User user = new User((long) 1,"demo","2022-08-31 00:29:17");
 //        ArrayList<User> errorUsers = new ArrayList<User>();

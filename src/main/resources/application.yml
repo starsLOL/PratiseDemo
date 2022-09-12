@@ -103,7 +103,7 @@ spring:
 # Mybatis配置
 mybatis:
   # mapper-locations: classpath:*/*.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml , classpath:mapper/*.xml
   # 多个配置可以使用英文逗号隔开
   type-aliases-package: com.stars.pratise.demo.entity , com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto , com.stars.pratise.demo.domain , com.stars.pratise.demo.model
   property:
@@ -132,7 +132,7 @@ pagehelper:
 
 # 通用Mapper设置
 mapper:
-  mappers: com.stars.pratise.demo.base.Mapper,com.stars.pratise.demo.base.MyMapper
+  mappers: com.stars.pratise.demo.base.Mapper , com.stars.pratise.demo.base.MyMapper , com.stars.pratise.demo.crud.Mappers
   #  mappers: com.stars.pratise.demo.base.Mapper
   not-empty: false
   identity: MYSQL

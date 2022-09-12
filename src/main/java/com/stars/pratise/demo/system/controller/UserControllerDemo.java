@@ -1,18 +1,5 @@
 package com.stars.pratise.demo.system.controller;
 
-import com.stars.pratise.demo.base.Result;
-import com.stars.pratise.demo.constants.BaseEnums;
-import com.stars.pratise.demo.constants.Constants;
-import com.stars.pratise.demo.system.dto.UserDemo;
-import com.stars.pratise.demo.util.Results;
-import com.stars.pratise.demo.util.time.Dates;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
-
-import java.util.ArrayList;
-import java.util.List;
-
 /**
  * 用户Controller
  *

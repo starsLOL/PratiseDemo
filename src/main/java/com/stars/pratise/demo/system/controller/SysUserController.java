@@ -1,11 +1,10 @@
 package com.stars.pratise.demo.system.controller;
 
-import com.stars.pratise.demo.base.Result;
+import com.stars.pratise.demo.common.Result;
 import com.stars.pratise.demo.constants.BaseEnums;
 import com.stars.pratise.demo.system.dto.SysUser;
 import com.stars.pratise.demo.system.service.SysUserService;
 import com.stars.pratise.demo.util.Results;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

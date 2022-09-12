@@ -1,10 +1,11 @@
-package com.stars.pratise.demo.base;
+package com.stars.pratise.demo.base.services;
 
 import com.github.pagehelper.PageHelper;
+import com.stars.pratise.demo.base.BaseDTO;
+import com.stars.pratise.demo.base.Mapper;
 import com.stars.pratise.demo.constants.Constants;
 import com.stars.pratise.demo.util.Reflections;
 import lombok.SneakyThrows;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.transaction.annotation.Transactional;
 import org.springframework.util.Assert;
 
