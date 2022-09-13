@@ -8,7 +8,11 @@ import java.util.Map;
 
 //1. BaseMapper(因为tk.mapper是不能被springboot扫描到的，所以不能放在springboot扫描mapper的包下，不然会报错)
 //@org.apache.ibatis.annotations.Mapper
-public interface Mappers<T> extends Mapper<T>, MySqlMapper<T> {
+public interface Mappers<T> extends BaseMapper<T>,
+        MySqlMapper<T>,
+        IdsMapper<T>,
+        ConditionMapper<T>,
+        ExampleMapper<T> {
 
 //    int deleteByPrimaryKey(K id);
 
@@ -36,5 +40,5 @@ public interface Mappers<T> extends Mapper<T>, MySqlMapper<T> {
      * @param params
      * @return
      */
-    List<Map<String, Object>> queryList(Map<String, Object> params);
+    List<T> queryList(Map<String, Object> params);
 }

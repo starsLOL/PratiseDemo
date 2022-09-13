@@ -1,20 +1,43 @@
 package com.stars.pratise.demo.test;
 
-import com.stars.pratise.demo.enums.DemoEums;
-import com.stars.pratise.demo.util.time.DateUtilsThree;
-import com.stars.pratise.demo.util.time.LocalDateTimeUtils;
+import com.google.gson.Gson;
+import com.google.gson.JsonElement;
+import com.stars.pratise.demo.domain.Book;
+import com.stars.pratise.demo.utils.md5.MD5Util;
+import com.stars.pratise.demo.common.TypeConversion;
 
 import java.lang.reflect.InvocationTargetException;
 import java.text.ParseException;
-import java.util.Date;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class demoOperate {
+    private static Object Book;
 
 //    public static int i;
 //    public static Integer j;
 
     public static void main(String[] args) throws NoSuchMethodException, InvocationTargetException, IllegalAccessException, ParseException {
 
+
+        Map<String, Object> map = new HashMap<String, Object>();
+        map.put("id", 4);
+        map.put("author", "demo");
+        map.put("name", "test");
+        map.put("price", 23.2);
+
+        Gson gson = new Gson();
+        JsonElement jsonElement = gson.toJsonTree(map);
+        Book pojo = gson.fromJson(jsonElement, Book.class);
+
+        System.out.println(pojo.toString());
+
+
+
+//        TypeConversion.convert(map, Book);
+//        System.out.println(MD5Util.encode("123456"));
 
         /**
          * 返回分页成功数据
@@ -59,7 +82,6 @@ public class demoOperate {
 //            returnBo.setNextPage(ordinal.getNextPage());
 //            return returnBo;
 //        }
-
 
 
         //“1970年1月1号0时0分0秒所差的毫秒数 时间的单位转换 1秒=1000毫秒(ms) 1分钟=60秒 1小时=60分钟=3600秒

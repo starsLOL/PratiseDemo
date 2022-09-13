@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.handler;
 
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 import com.stars.pratise.demo.enums.ResultEnums;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;

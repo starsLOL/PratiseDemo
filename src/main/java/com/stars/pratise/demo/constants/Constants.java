@@ -9,7 +9,6 @@ import java.nio.charset.Charset;
  *
  * @author stars
  * @version 1.0
- * @date 2022-09-10
  */
 public class Constants {
 
@@ -19,6 +18,18 @@ public class Constants {
      * 系统编码
      */
     public static final Charset CHARSET = Charsets.UTF_8;
+
+
+    /**
+     * 系统编码
+     */
+    public static final String pageNum = "1";
+
+
+    /**
+     * 系统编码
+     */
+    public static final String pageSize = "10";
 
     /**
      * 标识：是/否、启用/禁用等

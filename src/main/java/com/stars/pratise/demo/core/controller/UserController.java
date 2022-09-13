@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.core.controller;
 
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 import com.stars.pratise.demo.enums.Constans;
 import com.stars.pratise.demo.log.annotation.OperLog;
 import com.stars.pratise.demo.core.service.UserService;

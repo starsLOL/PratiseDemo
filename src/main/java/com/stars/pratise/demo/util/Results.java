@@ -1,7 +1,7 @@
 package com.stars.pratise.demo.util;
 
 
-import com.stars.pratise.demo.common.Result;
+import com.stars.pratise.demo.common.restResult.Result;
 
 /**
  * Result生成工具类

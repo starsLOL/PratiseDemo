@@ -2,11 +2,12 @@ package com.stars.pratise.demo.crud;
 
 import org.springframework.stereotype.Service;
 
+import java.io.Serializable;
 import java.util.List;
 import java.util.Map;
 
 @Service
-public interface IServices<T, K> {
+public interface IServices<T, K extends Serializable> {
     /**
      * 新增
      *
@@ -53,11 +54,11 @@ public interface IServices<T, K> {
      * 分页查询
      *
      * @param pageSize
-     * @param pageIndex
+     * @param pageNum
      * @param params
      * @return
      */
-    Object queryPageList(int pageSize, int pageIndex, Map<String, Object> params);
+    Object queryPageList(int pageNum, int pageSize, Map<String, Object> params);
 
     /**
      * 条件查询

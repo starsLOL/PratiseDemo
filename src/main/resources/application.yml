@@ -100,6 +100,40 @@ spring:
       enabled: true #热加载生效
       #exclude=WEB-INF/** #热加载排除目录
 
+# 测试配置数据
+stars:
+  blog:
+    name: stars's blog
+    title: Spring Boot
+    wholeTitle: ${stars.blog.name}--${stars.blog.title}
+
+  #  通用Mapper
+  #  mapper.enum-as-simple-type： 枚举按简单类型处理，如果有枚举字段则需要加上该配置才会做映射
+  #  mapper.not-empty： 设置以后，会去判断 insert 和 update 中字符串类型 !=''
+
+  #  分页插件
+  #  pagehelper.reasonable： 分页合理化参数，默认值为false。当该参数设置为 true 时，pageNum<=0 时会查询第一页， pageNum>pages（超过总数时），会查询最后一页。默认false 时，直接根据参数进行查询。
+  #  support-methods-arguments： 支持通过 Mapper 接口参数来传递分页参数，默认值false，分页插件会从查询方法的参数值中，自动根据上面 params 配置的字段中取值，查找到合适的值时就会自动分页。
+
+#　分页插件配置
+pagehelper:
+  helper-dialect: mysql
+  # 该参数设置为true时 , pageNum <= 0时查询第一页 , pageNum > pages(超过总数时) , 会查询最后一页
+  reasonable: true
+  support-methods-arguments: true
+  params: count=countSql
+
+# 通用Mapper设置
+mapper:
+  mappers: com.stars.pratise.demo.base.Mapper , com.stars.pratise.demo.base.MyMapper , com.stars.pratise.demo.crud.Mappers
+  #  mappers: com.stars.pratise.demo.base.Mapper
+  # 设置 insert 和 update 中，是否判断字符串类型!=''
+  not-empty: false
+  # 主键自增回写方法,默认值MYSQL,详细说明请看文档
+  identity: MYSQL
+    # 枚举按简单类型处理
+  enum-as-simple-type: true
+
 # Mybatis配置
 mybatis:
   # mapper-locations: classpath:*/*.xml
@@ -114,25 +148,3 @@ mybatis:
     use-generated-keys: true
     default-executor-type: REUSE
     use-actual-param-name: true
-
-# 测试配置数据
-stars:
-  blog:
-    name: stars's blog
-    title: Spring Boot
-    wholeTitle: ${stars.blog.name}--${stars.blog.title}
-
-#　分页插件配置
-pagehelper:
-  helper-dialect: mysql
-  # 该参数设置为true时 , pageNum <= 0时查询第一页 , pageNum > pages(超过总数时) , 会查询最后一页
-  reasonable: true
-  support-methods-arguments: true
-  params: count=countSql
-
-# 通用Mapper设置
-mapper:
-  mappers: com.stars.pratise.demo.base.Mapper , com.stars.pratise.demo.base.MyMapper , com.stars.pratise.demo.crud.Mappers
-  #  mappers: com.stars.pratise.demo.base.Mapper
-  not-empty: false
-  identity: MYSQL

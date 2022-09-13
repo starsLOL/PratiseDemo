@@ -2,7 +2,7 @@ package com.stars.pratise.demo.core.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 import com.stars.pratise.demo.domain.Book;
 import com.stars.pratise.demo.core.service.BookService;
 import com.stars.pratise.demo.util.ResponseDataUtil;

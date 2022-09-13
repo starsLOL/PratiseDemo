@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.core.service.impl;
 
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 import com.stars.pratise.demo.core.service.UserService;
 import com.stars.pratise.demo.entity.User;
 import com.stars.pratise.demo.core.mapper.UserMapper;

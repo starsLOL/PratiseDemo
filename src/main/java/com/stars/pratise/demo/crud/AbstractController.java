@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.crud;
 
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 
 import java.util.Map;
 
@@ -54,9 +54,11 @@ public abstract class AbstractController<T, K> {
     /**
      * 分页查询
      *
+     * @param pageNum  当前页
+     * @param pageSize 每页记录数
      * @return
      */
-    public abstract ResponseData queryPageList(int pageSize, int pageIndex, Map<String, Object> params);
+    public abstract ResponseData queryPageList(int pageNum, int pageSize, Map<String, Object> params);
 
     /**
      * 多条件查询

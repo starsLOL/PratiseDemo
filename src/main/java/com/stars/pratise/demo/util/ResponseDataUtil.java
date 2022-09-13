@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.util;
 
-import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.common.restResult.ResponseData;
 import com.stars.pratise.demo.enums.ResultEnums;
 
 public class ResponseDataUtil<T> {

@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.common;
+package com.stars.pratise.demo.common.restResult;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 
