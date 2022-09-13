@@ -4,29 +4,46 @@
         "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
 
 <generatorConfiguration>
-    <context id="oracle" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+    <properties resource="generator.properties"/>
+    <context id="MySqlContext" targetRuntime="MyBatis3Simple" defaultModelType="flat">
+        <!--自动识别数据库关键字，默认false，如果设置为true，根据SqlReservedWords中定义的关键字列表；
+            一般保留默认值，遇到数据库关键字（Java关键字），使用columnOverride覆盖 -->
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <!-- 生成的Java文件的编码 -->
+        <property name="javaFileEncoding" value="utf-8"/>
 
-        <plugin type="tk.mybatis.mapper.generator.MapperPlugin">
+        <plugin type="${mapper.plugin}">
             <!-- 该配置会使生产的Mapper自动继承MyMapper -->
             <!--            <property name="mappers" value="com.stars.pratise.demo.base.MyMapper"/>-->
             <property name="mappers" value="com.stars.pratise.demo.crud.Mappers"/>
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="false"/>
         </plugin>
+        <!-- 为模型生成序列化方法-->
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <!-- 为生成的Java模型创建一个toString方法 -->
+        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>
+        <!--生成mapper.xml时覆盖原文件-->
+        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>
 
         <!-- 阻止生成自动注释 -->
         <commentGenerator>
+            <!-- 是否去除自动生成的注释 true：是 ： false:否 -->
             <property name="javaFileEncoding" value="UTF-8"/>
-            <property name="suppressDate" value="true"/>
             <property name="suppressAllComments" value="true"/>
+            <property name="suppressDate" value="true"/>
+            <property name="addRemarkComments" value="true"/>
         </commentGenerator>
 
         <!-- 数据库链接地址账号密码 -->
         <jdbcConnection
-                driverClass="com.mysql.cj.jdbc.Driver"
-                connectionURL="jdbc:mysql://localhost:3306/pratise_demo?allowPublicKeyRetrieval=true&amp;useUnicode=true&amp;characterEncoding=utf-8&amp;useSSL=false&amp;serverTimezone=Asia/Shanghai"
-                userId="root"
-                password="123456">
+                driverClass="${jdbc.driverClass}"
+                connectionURL="${jdbc.url}"
+                userId="${jdbc.user}"
+                password="${jdbc.password}">
+            <!--解决mysql驱动升级到8.0后不生成指定数据库代码的问题-->
             <property name="nullCatalogMeansCurrent" value="true"/>
         </jdbcConnection>
 
@@ -39,7 +56,8 @@
         <!-- 生成Model类存放位置 -->
         <!-- targetPackage：生成的实体类所在的包 -->
         <!-- targetProject：生成的实体类所在的硬盘位置 -->
-        <javaModelGenerator targetPackage="com.stars.pratise.demo.domain" targetProject="src/main/java">
+        <javaModelGenerator targetPackage="${generator.javaModel-targetPackage}"
+                            targetProject="${generator.targetProject}">
             <!-- 是否允许子包 -->
             <property name="enableSubPackages" value="false"/>
             <!-- 是否对modal添加构造函数 -->
@@ -52,7 +70,7 @@
 
         <!-- 生成映射文件存放位置 -->
         <!-- targetPackage 和  targetProject：生成的  java interface 文件的包和位置 -->
-        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+        <sqlMapGenerator targetPackage="mapper" targetProject="${generator.targetProject}">
             <property name="enableSubPackages" value="true"/>
             <!-- 是否在当前路径下新加一层schema,ex：false路径com.qikegu.demo.model， com.qikegu.demo.model.[schemaName] -->
             <property name="enableSubPackages" value="false"/>
@@ -64,8 +82,8 @@
             type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口 -->
         <!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.stars.pratise.demo.mapper"-->
         <!--                             targetProject="src/main/java">-->
-        <javaClientGenerator type="XMLMAPPER" targetPackage="com.stars.pratise.demo.test.mapper"
-                             targetProject="src/main/java">
+        <javaClientGenerator type="XMLMAPPER" targetPackage="${generator.javaClient-targetPackage}"
+                             targetProject="${generator.targetProject}">
             <property name="enableSubPackages" value="true"/>
         </javaClientGenerator>
 

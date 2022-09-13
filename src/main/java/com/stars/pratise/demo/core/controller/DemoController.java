@@ -1,14 +1,11 @@
-package com.stars.pratise.demo.controller;
+package com.stars.pratise.demo.core.controller;
 
 import cn.hutool.core.lang.Dict;
 import cn.hutool.core.util.StrUtil;
-import com.stars.pratise.demo.common.ResponseData;
-import com.stars.pratise.demo.domain.Book;
 import com.stars.pratise.demo.log.annotation.OperLog;
 import com.stars.pratise.demo.config.ConfigDemoBean;
 import com.stars.pratise.demo.config.ConfigTestBean;
 import com.stars.pratise.demo.domain.BlogProperties;
-import com.stars.pratise.demo.service.BookService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

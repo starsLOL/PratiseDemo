@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.service;
+package com.stars.pratise.demo.core.service;
 
 import com.stars.pratise.demo.common.ResponseData;
 

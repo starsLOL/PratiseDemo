@@ -103,9 +103,9 @@ spring:
 # Mybatis配置
 mybatis:
   # mapper-locations: classpath:*/*.xml
-  mapper-locations: classpath:mybatis/mapper/*.xml , classpath:mapper/*.xml
+  mapper-locations: classpath:mybatis/mapper/*.xml,classpath*:mapper/*.xml
   # 多个配置可以使用英文逗号隔开
-  type-aliases-package: com.stars.pratise.demo.entity , com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto , com.stars.pratise.demo.domain , com.stars.pratise.demo.model
+  type-aliases-package: com.stars.pratise.demo.entity , com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto , com.stars.pratise.demo.domain , com.stars.pratise.demo.model , com.stars.pratise.demo.core.model
   property:
     order: BEFORE
   configuration:

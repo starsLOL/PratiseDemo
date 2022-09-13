@@ -43,6 +43,15 @@ public abstract class AbstractController<T, K> {
     public abstract ResponseData get(K Id);
 
     /**
+     * 查询全部结果
+     *
+     * @param
+     * @return
+     */
+    public abstract ResponseData selectAll();
+
+
+    /**
      * 分页查询
      *
      * @return

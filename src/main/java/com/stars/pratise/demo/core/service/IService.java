@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.service;
+package com.stars.pratise.demo.core.service;
 
 import java.util.List;
 

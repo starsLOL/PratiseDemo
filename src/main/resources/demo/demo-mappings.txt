@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="club.throwable.dao.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="club.throwable.entity.Order">
+
+        <id column="id" jdbcType="BIGINT" property="id"/>
+
+        <result column="order_id" jdbcType="VARCHAR" property="orderId"/>
+
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+
+        <result column="amount" jdbcType="DECIMAL" property="amount"/>
+
+        <result column="order_status" jdbcType="TINYINT" property="orderStatus"/>
+
+    </resultMap>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+
+        delete
+
+        from t_order
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </delete>
+
+    <insert id="insert" parameterType="club.throwable.entity.Order">
+
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+
+            SELECT LAST_INSERT_ID()
+
+        </selectKey>
+
+        insert into t_order (order_id, create_time, amount,
+
+        order_status)
+
+        values (#{orderId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP}, #{amount,jdbcType=DECIMAL},
+
+        #{orderStatus,jdbcType=TINYINT})
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="club.throwable.entity.Order">
+
+        update t_order
+
+        set order_id     = #{orderId,jdbcType=VARCHAR},
+
+            create_time  = #{createTime,jdbcType=TIMESTAMP},
+
+            amount       = #{amount,jdbcType=DECIMAL},
+
+            order_status = #{orderStatus,jdbcType=TINYINT}
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </update>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+
+        select id, order_id, create_time, amount, order_status
+
+        from t_order
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+
+        select id, order_id, create_time, amount, order_status
+
+        from t_order
+
+    </select>
+
+    <resultMap id="BaseResultMap" type="club.throwable.entity.Order">
+
+        <id column="id" jdbcType="BIGINT" property="id"/>
+
+        <result column="order_id" jdbcType="VARCHAR" property="orderId"/>
+
+        <result column="create_time" jdbcType="TIMESTAMP" property="createTime"/>
+
+        <result column="amount" jdbcType="DECIMAL" property="amount"/>
+
+        <result column="order_status" jdbcType="TINYINT" property="orderStatus"/>
+
+    </resultMap>
+
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+
+        delete
+
+        from t_order
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </delete>
+
+    <insert id="insert" parameterType="club.throwable.entity.Order">
+
+        <selectKey keyProperty="id" order="BEFORE" resultType="java.lang.Long">
+
+            SELECT LAST_INSERT_ID()
+
+        </selectKey>
+
+        insert into t_order (id, order_id, create_time,
+
+        amount, order_status)
+
+        values (#{id,jdbcType=BIGINT}, #{orderId,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP},
+
+        #{amount,jdbcType=DECIMAL}, #{orderStatus,jdbcType=TINYINT})
+
+    </insert>
+
+    <update id="updateByPrimaryKey" parameterType="club.throwable.entity.Order">
+
+        update t_order
+
+        set order_id     = #{orderId,jdbcType=VARCHAR},
+
+            create_time  = #{createTime,jdbcType=TIMESTAMP},
+
+            amount       = #{amount,jdbcType=DECIMAL},
+
+            order_status = #{orderStatus,jdbcType=TINYINT}
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </update>
+
+    <select id="selectByPrimaryKey" parameterType="java.lang.Long" resultMap="BaseResultMap">
+
+        select id, order_id, create_time, amount, order_status
+
+        from t_order
+
+        where id = #{id,jdbcType=BIGINT}
+
+    </select>
+
+    <select id="selectAll" resultMap="BaseResultMap">
+
+        select id, order_id, create_time, amount, order_status
+
+        from t_order
+
+    </select>
+
+</mapper>

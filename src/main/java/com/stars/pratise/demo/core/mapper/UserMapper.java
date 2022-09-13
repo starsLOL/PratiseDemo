@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.mapper;
+package com.stars.pratise.demo.core.mapper;
 
 import com.stars.pratise.demo.entity.User;
 import org.apache.ibatis.annotations.Mapper;

@@ -2,6 +2,7 @@ package com.stars.pratise.demo.crud;
 
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -37,6 +38,16 @@ public interface IServices<T, K> {
      * @return
      */
     public T get(K id);
+
+    /**
+     * 查询全部结果
+     * select(null)方法能达到同样的效果
+     *
+     * @param
+     * @return
+     */
+    public List<T> selectAll();
+
 
     /**
      * 分页查询

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<!--<generatorConfiguration>-->
+<!--    <properties resource="generator.properties"/>-->
+<!--    &lt;!&ndash;    一个数据连接&ndash;&gt;-->
+<!--    <context id="MySqlContext" targetRuntime="MyBatis3" defaultModelType="flat">-->
+<!--        <property name="beginningDelimiter" value="`"/>-->
+<!--        <property name="endingDelimiter" value="`"/>-->
+<!--        <property name="javaFileEncoding" value="UTF-8"/>-->
+<!--        &lt;!&ndash; 为模型生成序列化方法&ndash;&gt;-->
+<!--        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>-->
+<!--        &lt;!&ndash; 为生成的Java模型创建一个toString方法 &ndash;&gt;-->
+<!--        <plugin type="org.mybatis.generator.plugins.ToStringPlugin"/>-->
+<!--        &lt;!&ndash;生成mapper.xml时覆盖原文件&ndash;&gt;-->
+<!--        <plugin type="org.mybatis.generator.plugins.UnmergeableXmlMappersPlugin"/>-->
+
+<!--        <commentGenerator type="com.example.generator.CommentGenerator">-->
+<!--            &lt;!&ndash; 是否去除自动生成的注释 true：是 ： false:否 &ndash;&gt;-->
+<!--            <property name="suppressAllComments" value="true"/>-->
+<!--            <property name="suppressDate" value="true"/>-->
+<!--            <property name="addRemarkComments" value="true"/>-->
+<!--        </commentGenerator>-->
+
+<!--        <jdbcConnection driverClass="${jdbc.driverClass}"-->
+<!--                        connectionURL="${jdbc.connectionURL}"-->
+<!--                        userId="${jdbc.userId}"-->
+<!--                        password="${jdbc.password}">-->
+<!--            &lt;!&ndash;解决mysql驱动升级到8.0后不生成指定数据库代码的问题&ndash;&gt;-->
+<!--            <property name="nullCatalogMeansCurrent" value="true"/>-->
+<!--        </jdbcConnection>-->
+
+<!--        &lt;!&ndash; java代码生成位置       &ndash;&gt;-->
+<!--        <javaModelGenerator targetPackage="com.example.generator.model" targetProject="generator\src\main\java"/>-->
+<!--        &lt;!&ndash; xml文件代码生成位置    &ndash;&gt;-->
+<!--        <sqlMapGenerator targetPackage="mapper" targetProject="generator\src\main\resources"/>-->
+<!--        &lt;!&ndash; mapper接口代码生成位置    &ndash;&gt;-->
+<!--        <javaClientGenerator type="XMLMAPPER" targetPackage="com.example.generator.mapper"-->
+<!--                             targetProject="generator\src\main\java"/>-->
+
+<!--        &lt;!&ndash;生成全部表tableName设为%&ndash;&gt;-->
+<!--        &lt;!&ndash;        <table tableName="%">&ndash;&gt;-->
+<!--        &lt;!&ndash;            <generatedKey column="id" sqlStatement="MySql" identity="true"/>&ndash;&gt;-->
+<!--        &lt;!&ndash;        </table>&ndash;&gt;-->
+<!--        &lt;!&ndash;        不生成指定mapper函数 &ndash;&gt;-->
+<!--        <table tableName="%" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false"-->
+<!--               enableSelectByExample="false" selectByExampleQueryId="false">-->
+<!--            &lt;!&ndash; 指定主键,新增数据后，返回主键，具体变化在xml中展示&ndash;&gt;-->
+<!--            &lt;!&ndash;            <generatedKey column="id" sqlStatement="MySql" identity="true"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 重新命名生成的表名 ,需要注意，开头必须大写才能匹配，否则会匹配不上          &ndash;&gt;-->
+<!--            &lt;!&ndash;            <domainObjectRenamingRule searchString="^U" replaceString="b"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 各种属性设置，有很多很多种，就不展开了，大多数都用不上，下面的意思是只生成model类&ndash;&gt;-->
+<!--            &lt;!&ndash;            <property name="modelOnly" value="false"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 重写列的名字和java类型&ndash;&gt;-->
+<!--            &lt;!&ndash;            <columnOverride column="user_name" property="userName1" javaType="java.lang.Integer"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 列名批量替换，跟上面略微不同，不需要大写开头&ndash;&gt;-->
+<!--            &lt;!&ndash;            <columnRenamingRule searchString="^user" replaceString=""/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 隐藏指定列&ndash;&gt;-->
+<!--            &lt;!&ndash;            <ignoreColumn column="user_name"/>&ndash;&gt;-->
+<!--            &lt;!&ndash; 隐藏符合正则的列&ndash;&gt;-->
+<!--            &lt;!&ndash;            <ignoreColumnsByRegex pattern="^user.+" />&ndash;&gt;-->
+<!--        </table>-->
+
+<!--    </context>-->
+<!--</generatorConfiguration>-->

@@ -1,9 +1,9 @@
-package com.stars.pratise.demo.service.impl;
+package com.stars.pratise.demo.core.service.impl;
 
 import com.stars.pratise.demo.common.ResponseData;
+import com.stars.pratise.demo.core.service.UserService;
 import com.stars.pratise.demo.entity.User;
-import com.stars.pratise.demo.mapper.UserMapper;
-import com.stars.pratise.demo.service.UserService;
+import com.stars.pratise.demo.core.mapper.UserMapper;
 import com.stars.pratise.demo.util.ResponseDataUtil;
 import org.springframework.stereotype.Service;
 

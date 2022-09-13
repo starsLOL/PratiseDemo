@@ -1,9 +1,9 @@
-package com.stars.pratise.demo.controller;
+package com.stars.pratise.demo.core.controller;
 
 import com.stars.pratise.demo.common.ResponseData;
 import com.stars.pratise.demo.enums.Constans;
 import com.stars.pratise.demo.log.annotation.OperLog;
-import com.stars.pratise.demo.service.UserService;
+import com.stars.pratise.demo.core.service.UserService;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;

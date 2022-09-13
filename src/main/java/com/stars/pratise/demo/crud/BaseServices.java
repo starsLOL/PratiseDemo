@@ -7,13 +7,14 @@ import com.stars.pratise.demo.common.PageModel;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.lang.reflect.ParameterizedType;
+import java.util.List;
 import java.util.Map;
 
 
 public class BaseServices<T, K> implements IServices<T, K> {
 
     @Autowired
-    protected Mappers<T, K> mapper;
+    protected Mappers<T> mapper;
 
     private Class<T> modelClass;//当前泛型的真实类型Class
 
@@ -43,6 +44,11 @@ public class BaseServices<T, K> implements IServices<T, K> {
     @Override
     public T get(K id) {
         return mapper.selectByPrimaryKey(id);
+    }
+
+    @Override
+    public List<T> selectAll() {
+        return mapper.selectAll();
     }
 
     @Override

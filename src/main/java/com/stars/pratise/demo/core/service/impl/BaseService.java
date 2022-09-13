@@ -1,7 +1,7 @@
-package com.stars.pratise.demo.service.impl;
+package com.stars.pratise.demo.core.service.impl;
 
 import com.stars.pratise.demo.base.MyMapper;
-import com.stars.pratise.demo.service.IService;
+import com.stars.pratise.demo.core.service.IService;
 import org.springframework.beans.factory.annotation.Autowired;
 //import tk.mybatis.mapper.common.Mapper;
 

@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.controller;
+package com.stars.pratise.demo.core.controller;
 
 import com.stars.pratise.demo.entity.TestEntityVO;
 import lombok.extern.slf4j.Slf4j;

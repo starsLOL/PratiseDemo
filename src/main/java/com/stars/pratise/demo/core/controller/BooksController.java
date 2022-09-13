@@ -1,10 +1,10 @@
-package com.stars.pratise.demo.controller;
+package com.stars.pratise.demo.core.controller;
 
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import com.stars.pratise.demo.common.ResponseData;
 import com.stars.pratise.demo.domain.Book;
-import com.stars.pratise.demo.service.BookService;
+import com.stars.pratise.demo.core.service.BookService;
 import com.stars.pratise.demo.util.ResponseDataUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;

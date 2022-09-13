@@ -1,7 +1,7 @@
-package com.stars.pratise.demo.service.impl;
+package com.stars.pratise.demo.core.service.impl;
 
+import com.stars.pratise.demo.core.service.BookService;
 import com.stars.pratise.demo.domain.Book;
-import com.stars.pratise.demo.service.BookService;
 import org.springframework.stereotype.Service;
 
 @Service("bookService")

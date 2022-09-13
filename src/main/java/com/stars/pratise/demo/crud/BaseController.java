@@ -40,6 +40,12 @@ public class BaseController<T, K> extends AbstractController<T, K> {
         return ResponseDataUtil.success(service.get(id));
     }
 
+    @GetMapping("/select")
+    @Override
+    public ResponseData selectAll() {
+        return ResponseDataUtil.success(service.selectAll());
+    }
+
     @GetMapping("/page-list")
     @Override
     public ResponseData queryPageList(@RequestParam(required = false, defaultValue = "20") int pageSize,
