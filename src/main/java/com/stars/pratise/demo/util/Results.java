@@ -6,7 +6,7 @@ import com.stars.pratise.demo.common.restResult.Result;
 /**
  * Result生成工具类
  *
- * @author stars 2022-09-09
+ * @author stars
  * @version 1.0
  */
 public class Results {

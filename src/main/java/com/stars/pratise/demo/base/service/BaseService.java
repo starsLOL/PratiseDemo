@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.base.services;
+package com.stars.pratise.demo.base.service;
 
 import com.github.pagehelper.PageHelper;
 import com.stars.pratise.demo.base.BaseDTO;

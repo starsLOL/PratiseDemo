@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.test.service;
+package com.stars.pratise.demo.core.service;
 
 import com.stars.pratise.demo.crud.BaseServices;
 import com.stars.pratise.demo.domain.Money;

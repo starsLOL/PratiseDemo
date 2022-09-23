@@ -31,13 +31,34 @@ public class Constants {
      */
     public static final String pageSize = "10";
 
+
+    /**
+     * 普通用户
+     */
+    public static final String ROLE_CODE_USER = "user";
+    /**
+     * 操作员
+     */
+    public static final String ROLE_CODE_OPERATOR = "operator";
+    /**
+     * 管理员
+     */
+    public static final String ROLE_CODE_ADMIN = "admin";
+
+
     /**
      * 标识：是/否、启用/禁用等
      */
     public interface Flag {
 
+        /**
+         * 已删除
+         */
         Integer YES = 1;
 
+        /**
+         * 未删除
+         */
         Integer NO = 0;
 
     }

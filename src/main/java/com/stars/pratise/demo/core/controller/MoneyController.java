@@ -1,4 +1,4 @@
-package com.stars.pratise.demo.test.controller;
+package com.stars.pratise.demo.core.controller;
 
 import com.stars.pratise.demo.crud.BaseController;
 import com.stars.pratise.demo.domain.Money;

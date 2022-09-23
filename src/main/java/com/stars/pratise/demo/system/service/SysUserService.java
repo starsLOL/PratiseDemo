@@ -1,7 +1,7 @@
 package com.stars.pratise.demo.system.service;
 
 
-import com.stars.pratise.demo.base.services.Service;
+import com.stars.pratise.demo.base.service.Service;
 import com.stars.pratise.demo.system.dto.SysUser;
 
 /**

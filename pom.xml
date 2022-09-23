@@ -41,10 +41,23 @@
         <lombok.version>1.18.24</lombok.version>
         <pagehelper-spring-boot-starter.version>1.4.3</pagehelper-spring-boot-starter.version>
         <mybatis-generator-maven-plugin.version>1.4.1</mybatis-generator-maven-plugin.version>
+        <swagger.version>3.0.0</swagger.version>
     </properties>
 
 
     <dependencies>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger2</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>io.springfox</groupId>
+            <artifactId>springfox-swagger-ui</artifactId>
+            <version>${swagger.version}</version>
+        </dependency>
 
         <dependency>
             <groupId>org.mybatis.generator</groupId>

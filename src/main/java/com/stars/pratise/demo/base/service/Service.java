@@ -1,19 +1,20 @@
-package com.stars.pratise.demo.cache;
+package com.stars.pratise.demo.base.service;
 
 import java.util.List;
 
 /**
  * Service 基础通用接口
  *
- * @name BaseService
- * @version 1.0
  * @author stars
+ * @version 1.0
+ * @name BaseService
  */
 public interface Service<T> {
 
     //
     // insert
     // ----------------------------------------------------------------------------------------------------
+
     /**
      * 保存一个实体，null的属性也会保存，不会使用数据库默认值
      *
@@ -49,6 +50,7 @@ public interface Service<T> {
     //
     // update
     // ----------------------------------------------------------------------------------------------------
+
     /**
      * 根据主键更新实体全部字段，null值会被更新
      *
@@ -84,6 +86,7 @@ public interface Service<T> {
     //
     // delete
     // ----------------------------------------------------------------------------------------------------
+
     /**
      * 根据主键删除
      *
@@ -125,6 +128,7 @@ public interface Service<T> {
     //
     // insert or update or delete
     // ----------------------------------------------------------------------------------------------------
+
     /**
      * 根据实体的operate决定哪种操作. null的属性也会保存，不会使用数据库默认值
      *
@@ -161,6 +165,7 @@ public interface Service<T> {
     //
     // select
     // ----------------------------------------------------------------------------------------------------
+
     /**
      * 根据主键查询
      *
@@ -179,7 +184,8 @@ public interface Service<T> {
 
     /**
      * 根据字段和值查询 返回一个
-     * @param key 不能为空
+     *
+     * @param key   不能为空
      * @param value 不能为空
      * @return
      */

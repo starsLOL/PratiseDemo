@@ -16,8 +16,7 @@
 
         <plugin type="${mapper.plugin}">
             <!-- 该配置会使生产的Mapper自动继承MyMapper -->
-            <!--            <property name="mappers" value="com.stars.pratise.demo.base.MyMapper"/>-->
-            <property name="mappers" value="com.stars.pratise.demo.crud.Mappers"/>
+            <!--            <property name="mappers" value="com.stars.pratise.demo.crud.Mappers"/>-->
             <!-- caseSensitive默认false，当数据库表名区分大小写时，可以将该属性设置为true -->
             <property name="caseSensitive" value="false"/>
         </plugin>

@@ -1,6 +1,6 @@
 package com.stars.pratise.demo.system.service.impl;
 
-import com.stars.pratise.demo.base.services.BaseService;
+import com.stars.pratise.demo.base.service.BaseService;
 import com.stars.pratise.demo.system.dto.SysUser;
 import com.stars.pratise.demo.system.service.SysUserService;
 import org.springframework.stereotype.Service;

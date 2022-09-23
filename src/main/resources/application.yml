@@ -125,13 +125,13 @@ pagehelper:
 
 # 通用Mapper设置
 mapper:
-  mappers: com.stars.pratise.demo.base.Mapper , com.stars.pratise.demo.base.MyMapper , com.stars.pratise.demo.crud.Mappers
+  mappers: com.stars.pratise.demo.base.Mapper,com.stars.pratise.demo.crud.Mappers
   #  mappers: com.stars.pratise.demo.base.Mapper
   # 设置 insert 和 update 中，是否判断字符串类型!=''
   not-empty: false
   # 主键自增回写方法,默认值MYSQL,详细说明请看文档
   identity: MYSQL
-    # 枚举按简单类型处理
+  # 枚举按简单类型处理
   enum-as-simple-type: true
 
 # Mybatis配置
@@ -139,7 +139,7 @@ mybatis:
   # mapper-locations: classpath:*/*.xml
   mapper-locations: classpath:mybatis/mapper/*.xml,classpath*:mapper/*.xml
   # 多个配置可以使用英文逗号隔开
-  type-aliases-package: com.stars.pratise.demo.entity , com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto , com.stars.pratise.demo.domain , com.stars.pratise.demo.model , com.stars.pratise.demo.core.model
+  type-aliases-package: com.stars.pratise.demo.entity,com.stars.pratise.demo.log.domain , com.stars.pratise.demo.system.dto,com.stars.pratise.demo.domain,com.stars.pratise.demo.model,com.stars.pratise.demo.core.model,com.stars.pratise.demo.system.dto
   property:
     order: BEFORE
   configuration:
