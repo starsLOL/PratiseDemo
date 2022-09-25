@@ -2,6 +2,7 @@ package com.stars.pratise.demo.core.service;
 
 import com.stars.pratise.demo.crud.BaseServices;
 import com.stars.pratise.demo.domain.Money;
+import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.stereotype.Service;
 
 @Service

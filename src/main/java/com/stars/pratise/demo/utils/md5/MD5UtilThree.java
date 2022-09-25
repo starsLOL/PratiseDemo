@@ -1,86 +1,80 @@
 package com.stars.pratise.demo.utils.md5;
 
-import lombok.extern.slf4j.Slf4j;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.UnsupportedEncodingException;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
-/**
- * @author stars
- * @ClassName: MD5Util
- * @Description: MD5加密解密工具类
- */
-
-@Slf4j
-public class MD5Util {
-
-    private static final String SALT = "1357986420";
-
-    /**
-     * 16位 原加密密文
-     */
+public class MD5UtilThree {
     private static char[] Digit = {'0', '1', '2', '3', '4', '5', '6', '7', '8',
             '9', 'a', 'b', 'c', 'd', 'e', 'f'};
 
+    public static String getMd5Sum(String inputStr)
+            throws NoSuchAlgorithmException {
+        MessageDigest digest = MessageDigest.getInstance("MD5");
+        byte[] inputStrByte = inputStr.getBytes();
+        digest.update(inputStrByte, 0, inputStrByte.length);
 
-    /**
-     * 使用系统指定的盐加密
-     *
-     * @param password
-     * @return
-     */
-    public static String encode(String password) {
-        return MD5Util.encode(SALT, password);
+        byte[] md5sum = digest.digest();
+
+        StringBuffer sb = new StringBuffer();
+        for (int i = 0; i < 16; i++) {
+            char[] ob = new char[2];
+            ob[0] = Digit[md5sum[i] >> 4 & 0x0F];
+            ob[1] = Digit[md5sum[i] & 0x0F];
+            String s = new String(ob);
+            sb.append(s);
+        }
+
+        return sb.toString();
     }
 
     /**
-     * 使用传入的盐加密
+     * 对字符串进行 MD5 加密
      *
-     * @param salt
-     * @param password
-     * @return
+     * @param str 待加密字符串
+     * @return 加密后字符串
      */
-    public static String encode(String salt, String password) {
-        password = password + salt;
+    public static String md5(String str) {
         MessageDigest md5 = null;
         try {
             md5 = MessageDigest.getInstance("MD5");
-        } catch (Exception e) {
-            throw new RuntimeException(e);
+            md5.update(str.getBytes("UTF-8"));
+        } catch (NoSuchAlgorithmException e) {
+            throw new RuntimeException(e.getMessage());
+        } catch (UnsupportedEncodingException e) {
+            throw new RuntimeException(e.getMessage());
         }
-        char[] charArray = password.toCharArray();
-        byte[] byteArray = new byte[charArray.length];
+        byte[] encodedValue = md5.digest();
+        int j = encodedValue.length;
+        char finalValue[] = new char[j * 2];
+        int k = 0;
+        for (int i = 0; i < j; i++) {
+            byte encoded = encodedValue[i];
+            finalValue[k++] = Digit[encoded >> 4 & 0xf];
+            finalValue[k++] = Digit[encoded & 0xf];
+        }
 
-        for (int i = 0; i < charArray.length; i++) {
-            byteArray[i] = (byte) charArray[i];
-        }
-        byte[] md5Bytes = md5.digest(byteArray);
-        StringBuffer hexValue = new StringBuffer();
-        for (int i = 0; i < md5Bytes.length; i++) {
-            int val = ((int) md5Bytes[i]) & 0xff;
-            if (val < 16) {
-                hexValue.append("0");
-            }
-
-            hexValue.append(Integer.toHexString(val));
-        }
-        return hexValue.toString();
+        return new String(finalValue);
     }
 
     /**
      * 签名字符串
      *
      * @param text 需要签名的字符串
-     * @param sign 对比签名结果
+     * @param sign 签名结果
      * @return 签名结果
      */
     public static boolean verify(String text, String sign) {
-        String mysign = encode(text);
-        return mysign.equals(sign);
+        String mysign = md5(text);
+        if (mysign.equals(sign)) {
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -128,5 +122,4 @@ public class MD5Util {
         }
         return new String(finalValue);
     }
-
 }

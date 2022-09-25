@@ -1,5 +1,6 @@
 package com.stars.pratise.demo.crud;
 
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import java.io.Serializable;

@@ -11,6 +11,9 @@ import com.stars.pratise.demo.common.TypeConversion;
 import com.stars.pratise.demo.core.model.PageInfos;
 import com.stars.pratise.demo.domain.Book;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import tk.mybatis.mapper.entity.Example;
 
 import javax.annotation.Resource;
@@ -36,21 +39,55 @@ public class BaseServices<T, K extends Serializable> implements IServices<T, K> 
     }
 
     @Override
+//    @CachePut(value = "demo", key = "#root.args[0].id")
+    @CachePut(keyGenerator = "keyGenerator", value = "demo")
+//    @CachePut(key = "#root.args[0]+'_'+#root.args[0].id", value = "demo")
     public Object insert(T t) {
-        return mapper.insert(t);
+        //        说明：保存一个实体，null的属性不会保存，会使用数据库默认值
+        //        mapper.insertSelective(t);
+        int result = mapper.insertSelective(t);
+        if (result > 0) {
+            return t;
+        } else {
+//        说明：保存一个实体，null的属性不会保存，会使用数据库默认值
+            return 0;
+        }
+
     }
 
     @Override
+//    @Cacheable(key = "#p0.id")
+    @CachePut(keyGenerator = "keyGenerator", value = "demo")
     public Object update(T t) {
-        return mapper.updateByPrimaryKey(t);
+
+//        根据主键更新属性不为null的值
+        int result = mapper.updateByPrimaryKeySelective(t);
+        if (result > 0) {
+            return t;
+        } else {
+            return 0;
+        }
+
+////        根据主键更新属性不为null的值
+//        return mapper.updateByPrimaryKeySelective(t);
     }
 
     @Override
+//    @CacheEvict(value = "demo", keyGenerator = "keyGenerator")
+//    @CacheEvict(key = "#root.target+'_'+#p0", value = "demo")
+    @CacheEvict(keyGenerator = "keyGenerator", value = "demo", beforeInvocation = true)
+//    @CacheEvict(key = "#p0", allEntries = true)
     public Object delete(K id) {
         return mapper.deleteByPrimaryKey(id);
     }
 
+    //    除了上面三个配置值之外，查看@Cacheable注解源码的童鞋可以看到还有condition设置，这个表示当它设置的条件达成时，才写入缓存
+//    接下来是unless参数，从名字上可以看出它表示不满足条件时才写入缓存
     @Override
+//    @Cacheable(key = "#root.target+'_'+#p0", value = "StarsPratiseDemo", condition = "#p0>0", unless = "#result==null")
+    @Cacheable(keyGenerator = "keyGenerator", value = "demo", condition = "#p0>0", unless = "#result==null")
+//    @Cacheable(key = "#root.caches[0].name+'_'+#p0", value = "demo", condition = "#p0>0", unless = "#result==null")
+//    @Cacheable(key = "#root.target+'_'+#p0", value = "demo", condition = "#p0>0", unless = "#result==null")
     public T get(K id) {
         return mapper.selectByPrimaryKey(id);
     }

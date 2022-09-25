@@ -11,11 +11,10 @@ import java.security.NoSuchAlgorithmException;
 
 /**
  * @Description: MD5 加密工具类
- * @Author: 云诺
- * @Date: 2020/12/31 11:57
+ * @Author: stars
  */
 @Slf4j
-public class MD5Utils {
+public class MD5UtilTwo {
 
 
     /**
@@ -36,7 +35,7 @@ public class MD5Utils {
             MESSAGEDIGEST = MessageDigest.getInstance("MD5");
         } catch (NoSuchAlgorithmException e) {
 
-            log.error(MD5Utils.class.getName() + "初始化失败，MessageDigest不支持MD5Util.");
+            log.error(MD5UtilTwo.class.getName() + "初始化失败，MessageDigest不支持MD5Util.");
         }
     }
 
@@ -140,4 +139,5 @@ public class MD5Utils {
 
     }
 }
+
 
